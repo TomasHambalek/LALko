@@ -1,0 +1,346 @@
+[
+  {
+    "model": "runlog.machine",
+    "pk": 1,
+    "fields": {
+      "name": "P400 Máňa",
+      "description": "Laser ablation system P400"
+    }
+  },
+  {
+    "model": "runlog.machine",
+    "pk": 2,
+    "fields": {
+      "name": "S500U Káťa",
+      "description": "Laser ablation system S500U"
+    }
+  },
+  {
+    "model": "runlog.machiningtype",
+    "pk": 1,
+    "fields": {
+      "name": "LineByLine"
+    }
+  },
+  {
+    "model": "runlog.machiningtype",
+    "pk": 2,
+    "fields": {
+      "name": "Spiral"
+    }
+  },
+  {
+    "model": "runlog.machiningtype",
+    "pk": 3,
+    "fields": {
+      "name": "LongPlate"
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 1,
+    "fields": {
+      "task_name": "Arrow on Mold",
+      "status": "On Hold"
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 2,
+    "fields": {
+      "task_name": "Minimold Ablation",
+      "status": "In progress"
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 3,
+    "fields": {
+      "task_name": "Mold Ablation",
+      "status": "Completed"
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 4,
+    "fields": {
+      "task_name": "Mold Cleaning",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 5,
+    "fields": {
+      "task_name": "Stud Ablation",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 6,
+    "fields": {
+      "task_name": "Vision Markers",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 7,
+    "fields": {
+      "task_name": "Mold Blackening",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 8,
+    "fields": {
+      "task_name": "“UP” On Turtle",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 9,
+    "fields": {
+      "task_name": "Turtle Number",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 10,
+    "fields": {
+      "task_name": "Service",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 11,
+    "fields": {
+      "task_name": "Project Run-in",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 12,
+    "fields": {
+      "task_name": "Electrode Labels",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 13,
+    "fields": {
+      "task_name": "Test",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 14,
+    "fields": {
+      "task_name": "Electrode Ablation",
+      "status": ""
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 1,
+    "fields": {
+      "project_number": "P048",
+      "aac_mold_number": "G00",
+      "mold_number": "",
+      "surface": "S1",
+      "moldset": 1,
+      "preform": 0,
+      "layout": 1
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 2,
+    "fields": {
+      "project_number": "P080",
+      "aac_mold_number": "G01",
+      "mold_number": "",
+      "surface": "S2",
+      "moldset": 2,
+      "preform": 0,
+      "layout": 2
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 3,
+    "fields": {
+      "project_number": "P081",
+      "aac_mold_number": "G02",
+      "mold_number": "",
+      "surface": "S1B",
+      "moldset": 3,
+      "preform": 0,
+      "layout": 3
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 4,
+    "fields": {
+      "project_number": "P082",
+      "aac_mold_number": "G03",
+      "mold_number": "",
+      "surface": "S2B",
+      "moldset": 4,
+      "preform": 0,
+      "layout": 4
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 5,
+    "fields": {
+      "project_number": "P085",
+      "aac_mold_number": "G04",
+      "mold_number": "",
+      "surface": "S1C",
+      "moldset": 5,
+      "preform": 0,
+      "layout": 5
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 6,
+    "fields": {
+      "project_number": "P087",
+      "aac_mold_number": "G05",
+      "mold_number": "",
+      "surface": "S2C",
+      "moldset": 6,
+      "preform": 0,
+      "layout": 6
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 7,
+    "fields": {
+      "project_number": "P088",
+      "aac_mold_number": "G06",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 7,
+      "preform": 0,
+      "layout": 7
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 8,
+    "fields": {
+      "project_number": "P089",
+      "aac_mold_number": "G07",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 8,
+      "preform": 0,
+      "layout": 8
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 9,
+    "fields": {
+      "project_number": "P090",
+      "aac_mold_number": "G08",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 9,
+      "preform": 0,
+      "layout": 9
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 10,
+    "fields": {
+      "project_number": "P091",
+      "aac_mold_number": "G09",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 10,
+      "preform": 0,
+      "layout": 10
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 11,
+    "fields": {
+      "project_number": "P092",
+      "aac_mold_number": "G10",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 11,
+      "preform": 0,
+      "layout": 11
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 12,
+    "fields": {
+      "project_number": "P094",
+      "aac_mold_number": "G11",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 12,
+      "preform": 0,
+      "layout": 12
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 13,
+    "fields": {
+      "project_number": "P095",
+      "aac_mold_number": "G12",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 13,
+      "preform": 0,
+      "layout": 13
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 14,
+    "fields": {
+      "project_number": "P097",
+      "aac_mold_number": "G13",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 14,
+      "preform": 0,
+      "layout": 14
+    }
+  },
+  {
+    "model": "runlog.project",
+    "pk": 15,
+    "fields": {
+      "project_number": "P101",
+      "aac_mold_number": "G14",
+      "mold_number": "",
+      "surface": "",
+      "moldset": 15,
+      "preform": 0,
+      "layout": 15
+    }
+  }
+]

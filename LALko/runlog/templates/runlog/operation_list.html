@@ -1,0 +1,18 @@
+{% extends "runlog/base.html" %}
+
+{% block content %}
+<h2>All Operations</h2>
+<a href="{% url 'add_operation' %}">Add new operation</a>
+<ul>
+    {% for op in operations %}
+        <li>
+            <a href="{% url 'operation_detail' op.id %}">
+                {{ op.task.task_name }} on {{ op.machine.name }} by {{ op.operator.user.username }}
+            </a>
+            ({{ op.start_time }})
+        </li>
+    {% empty %}
+        <li>No operations recorded yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

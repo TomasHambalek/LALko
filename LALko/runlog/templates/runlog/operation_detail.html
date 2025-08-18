@@ -1,0 +1,16 @@
+{% extends "runlog/base.html" %}
+
+{% block content %}
+<h2>Operation detail</h2>
+<p><b>Task:</b> {{ operation.task.task_name }} ({{ operation.task.status }})</p>
+<p><b>Machine:</b> {{ operation.machine.name }}</p>
+<p><b>Operator:</b> {{ operation.operator.user.username }}</p>
+<p><b>Project:</b> {{ operation.project.project_number }} / {{ operation.project.mold_number }}</p>
+<p><b>Machining type:</b> {{ operation.machining_type.name }}</p>
+<p><b>X levelling:</b> {{ operation.x_levelling }}</p>
+<p><b>Y levelling:</b> {{ operation.y_levelling }}</p>
+<p><b>Start time:</b> {{ operation.start_time }}</p>
+<p><b>End time:</b> {{ operation.end_time }}</p>
+<p><b>Duration:</b> {{ operation.duration }}</p>
+<p><b>Notes:</b> {{ operation.notes }}</p>
+{% endblock %}

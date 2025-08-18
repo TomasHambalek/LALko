@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LALko</title>
+</head>
+<body>
+    <h1>LALko – Laser Ablation Log</h1>
+    <nav>
+        <a href="{% url 'operation_list' %}">Operations</a> |
+        <a href="{% url 'machine_list' %}">Machines</a> |
+        {% if user.is_authenticated %}
+            <a href="{% url 'my_operations' %}">My Operations</a> |
+            <a href="/admin/logout/">Logout</a>
+        {% else %}
+            <a href="/admin/login/">Login</a>
+        {% endif %}
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
