@@ -1,0 +1,26 @@
+[
+  {
+    "model": "runlog.task",
+    "pk": 1,
+    "fields": {
+      "task_name": "Run",
+      "status": "Open"
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 2,
+    "fields": {
+      "task_name": "Test",
+      "status": "Open"
+    }
+  },
+  {
+    "model": "runlog.task",
+    "pk": 3,
+    "fields": {
+      "task_name": "ReRun",
+      "status": "Closed"
+    }
+  }
+]
