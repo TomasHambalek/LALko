@@ -9,6 +9,12 @@
         ({{ operation.task.status }})
     {% endif %}
 </p>
+<p>
+    <b>Task:</b> {{ operation.task.name }}
+    {% if operation.task.status %}
+        ({{ operation.task.status }})
+    {% endif %}
+</p>
 <p><b>Machine:</b> {{ operation.machine.name }}</p>
 <p><b>Operator:</b> {% if operation.operator %}{{ operation.operator.name }}{% endif %}</p>
 <p><b>Project:</b> {{ operation.project.project_number }} / {{ operation.project.mold_number }}</p>
@@ -18,9 +24,10 @@
 
 <p><b>Start time:</b> {% if operation.start_time %}{{ operation.start_time }}{% endif %}</p>
 <p><b>End time:</b> {% if operation.end_time %}{{ operation.end_time }}{% endif %}</p>
-<p><b>Duration:</b> {% if operation.duration %}{{ operation.duration }}{% endif %}</p>
+<p><b>Duration:</b> {{ operation.duration|default:"0"|floatformat:"2" }} hours</p>
 
-<p><b>Notes:</b> {{ operation.notes }}</p>
+<p><b>Note:</b> {{ operation.note }}</p>
+<p><b>Note2:</b> {{ operation.note2 }}</p>
 
 <hr>
 <a href="{% url 'edit_operation' operation.id %}">Edit</a>

@@ -55,6 +55,7 @@ class Status(models.Model):
 class Task(models.Model):
     """Type of task performed (from Values sheet)."""
     name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
@@ -73,6 +74,9 @@ class MachiningType(models.Model):
     def __str__(self):
         return self.name
 
+# runlog/models.py
+from django.db import models
+
 class Operation(models.Model):
     """Main log entry for a laser ablation operation."""
     project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, blank=True)
@@ -81,15 +85,24 @@ class Operation(models.Model):
     machining_type = models.ForeignKey(MachiningType, on_delete=models.CASCADE, null=True, blank=True)
     # Vztah k operátorům
     operator = models.ForeignKey(Operator, on_delete=models.CASCADE)
-    
+    status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, blank=True)
     # Technická data
     x_levelling = models.FloatField(blank=True, null=True)
     y_levelling = models.FloatField(blank=True, null=True)
     start_time = models.DateTimeField(blank=True, null=True)
     end_time = models.DateTimeField(blank=True, null=True)
     duration = models.FloatField(blank=True, null=True)
-    notes = models.TextField(blank=True, null=True)
-    notes2 = models.TextField(blank=True, null=True)
+    note = models.TextField(blank=True, null=True)
+    note2 = models.TextField(blank=True, null=True)
+    
+    # Přidání metody save()
+    def save(self, *args, **kwargs):
+        if self.start_time and self.end_time:
+            time_delta = self.end_time - self.start_time
+            # Převedení na minuty
+            self.duration = time_delta.total_seconds() / 3600
+            
+        super().save(*args, **kwargs)
     
     class Meta:
         verbose_name = "Operation"

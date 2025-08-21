@@ -6,6 +6,7 @@
 <ul>
     {% for op in operations %}
         <li>
+            {{ op.id }}.
             <a href="{% url 'operation_detail' op.id %}">
                 {{ op.task.name }} by {{ op.operator.name }}
             </a>

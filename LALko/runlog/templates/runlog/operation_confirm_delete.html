@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>Delete operation</h2>
-<p>Are you sure you want to delete the operation for "{{ operation.project.project_number }}"?</p>
+<p>Are you sure you want to delete the operation with ID "{{ operation.id }}"?</p>
 <form method="post">
     {% csrf_token %}
     <button type="submit">Delete</button>

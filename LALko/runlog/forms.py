@@ -1,8 +1,13 @@
+# runlog/forms.py
+
 from django import forms
-from .models import Operation
+from .models import Operation, Task # Ujistěte se, že importujete Task
 
 class OperationForm(forms.ModelForm):
-    """Form to create a new operation entry."""
     class Meta:
         model = Operation
-        fields = "__all__"
+        fields = [
+            'project', 'task', 'machine', 'machining_type', 'operator', 'status',
+            'x_levelling', 'y_levelling', 'start_time', 'end_time',
+            'note', 'note2'
+        ]

@@ -1,5 +1,0 @@
-[
-  { "model": "runlog.machiningtype", "pk": 1, "fields": { "name": "Line By Line" } },
-  { "model": "runlog.machiningtype", "pk": 2, "fields": { "name": "Spiral" } },
-  { "model": "runlog.machiningtype", "pk": 3, "fields": { "name": "LongPlates" } }
-]
