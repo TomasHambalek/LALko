@@ -54,14 +54,14 @@ class Status(models.Model):
 
 class Task(models.Model):
     """Type of task performed (from Values sheet)."""
-    task_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         verbose_name = "Task"
         verbose_name_plural = "Tasks"
     def __str__(self):
-        return f"{self.task_name} ({self.status or 'No status'})"
+        return self.name
 
 class MachiningType(models.Model):
     """Machining type of the operation (LineByLine, Spiral, LongPlate)."""

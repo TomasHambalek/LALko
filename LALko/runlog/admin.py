@@ -15,8 +15,8 @@ class MachiningTypeAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ("task_name", "status")
-    search_fields = ("task_name", "status")
+    list_display = ("name", "status")
+    search_fields = ("name", "status")
     list_filter = ("status",)
 
 @admin.register(Project)
@@ -39,7 +39,7 @@ class StatusAdmin(admin.ModelAdmin):
 class OperationAdmin(admin.ModelAdmin):
     # Opraveno: "get_operators" bylo změněno na "get_operator_name"
     list_display = ("id", "project", "task", "machine", "machining_type", "get_operator_name")
-    search_fields = ("project__project_number", "task__task_name", "operator__name")
+    search_fields = ("project__project_number", "task__name", "operator__name")
     list_filter = ("machine", "machining_type", "task__status")
 
     def get_operator_name(self, obj):

@@ -4,7 +4,7 @@
 <h2>My Operations</h2>
 <ul>
     {% for op in operations %}
-        <li>{{ op.task.task_name }} on {{ op.machine.name }} ({{ op.start_time }})</li>
+        <li>{{ op.task.name }} on {{ op.machine.name }} ({{ op.start_time }})</li>
     {% empty %}
         <li>You have no operations recorded.</li>
     {% endfor %}
