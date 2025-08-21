@@ -7,7 +7,7 @@
     {% for op in operations %}
         <li>
             <a href="{% url 'operation_detail' op.id %}">
-                {{ op.task.task_name }} on {{ op.machine.name }} by {{ op.operator.user.username }}
+                {{ op.task.task_name }} on {{ op.machine.name }} by {{ op.operator.name }}
             </a>
             ({{ op.start_time }})
         </li>

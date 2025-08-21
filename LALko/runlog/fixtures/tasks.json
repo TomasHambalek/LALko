@@ -1,26 +1,16 @@
 [
-  {
-    "model": "runlog.task",
-    "pk": 1,
-    "fields": {
-      "task_name": "Run",
-      "status": "Open"
-    }
-  },
-  {
-    "model": "runlog.task",
-    "pk": 2,
-    "fields": {
-      "task_name": "Test",
-      "status": "Open"
-    }
-  },
-  {
-    "model": "runlog.task",
-    "pk": 3,
-    "fields": {
-      "task_name": "ReRun",
-      "status": "Closed"
-    }
-  }
+  { "model": "runlog.task", "pk": 1, "fields": { "task_name": "Arrow on Mold" } },
+  { "model": "runlog.task", "pk": 2, "fields": { "task_name": "Minimold Ablation" } },
+  { "model": "runlog.task", "pk": 3, "fields": { "task_name": "Mold Ablation" } },
+  { "model": "runlog.task", "pk": 4, "fields": { "task_name": "Mold Cleaning" } },
+  { "model": "runlog.task", "pk": 5, "fields": { "task_name": "Stud Ablation" } },
+  { "model": "runlog.task", "pk": 6, "fields": { "task_name": "Vision Markers" } },
+  { "model": "runlog.task", "pk": 7, "fields": { "task_name": "Mold Blackening" } },
+  { "model": "runlog.task", "pk": 8, "fields": { "task_name": "“UP” On Turtle" } },
+  { "model": "runlog.task", "pk": 9, "fields": { "task_name": "Turtle Number" } },
+  { "model": "runlog.task", "pk": 10, "fields": { "task_name": "Service" } },
+  { "model": "runlog.task", "pk": 11, "fields": { "task_name": "Project Run-in" } },
+  { "model": "runlog.task", "pk": 12, "fields": { "task_name": "Electrode Labels" } },
+  { "model": "runlog.task", "pk": 13, "fields": { "task_name": "Test" } },
+  { "model": "runlog.task", "pk": 14, "fields": { "task_name": "Electrode Ablation" } }
 ]

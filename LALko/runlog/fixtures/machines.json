@@ -1,0 +1,4 @@
+[
+  { "model": "runlog.machine", "pk": 1, "fields": { "name": "P400 Máňa" } },
+  { "model": "runlog.machine", "pk": 2, "fields": { "name": "S500U Káťa" } }
+]

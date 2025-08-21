@@ -1,32 +1,8 @@
 [
-  {
-    "model": "runlog.operator",
-    "pk": 1,
-    "fields": { "name": "JPR" }
-  },
-  {
-    "model": "runlog.operator",
-    "pk": 2,
-    "fields": { "name": "THA" }
-  },
-  {
-    "model": "runlog.operator",
-    "pk": 3,
-    "fields": { "name": "JPR+THA" }
-  },
-  {
-    "model": "runlog.operator",
-    "pk": 4,
-    "fields": { "name": "ALE" }
-  },
-  {
-    "model": "runlog.operator",
-    "pk": 5,
-    "fields": { "name": "JLI" }
-  },
-  {
-    "model": "runlog.operator",
-    "pk": 6,
-    "fields": { "name": "SBA" }
-  }
+  { "model": "runlog.operator", "pk": 1, "fields": { "name": "JPR" } },
+  { "model": "runlog.operator", "pk": 2, "fields": { "name": "THA" } },
+  { "model": "runlog.operator", "pk": 3, "fields": { "name": "JPR+THA" } },
+  { "model": "runlog.operator", "pk": 4, "fields": { "name": "ALE" } },
+  { "model": "runlog.operator", "pk": 5, "fields": { "name": "JLI" } },
+  { "model": "runlog.operator", "pk": 6, "fields": { "name": "SBA" } }
 ]
