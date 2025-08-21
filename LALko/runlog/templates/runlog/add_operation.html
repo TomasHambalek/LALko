@@ -4,24 +4,24 @@
 <h2>Add new operation</h2>
 <form method="post">
     {% csrf_token %}
-    
-    <p>
-        <label for="id_start_time">Start time:</label>
-        {{ form.start_time }}
-        <button type="button" onclick="setNow('id_start_time')">Now</button>
-    </p>
-
-    <p>
-        <label for="id_end_time">End time:</label>
-        {{ form.end_time }}
-        <button type="button" onclick="setNow('id_end_time')">Now</button>
-    </p>
 
     {% for field in form %}
         {% if field.name != 'start_time' and field.name != 'end_time' %}
             <p>{{ field.label_tag }} {{ field }}</p>
         {% endif %}
     {% endfor %}
+
+    <p>
+        <label for="id_start_time">Start time:</label>
+        <input type="text" name="start_time" id="id_start_time" placeholder="YYYY-MM-DD HH:MM">
+        <button type="button" onclick="setNow('id_start_time')">Now</button>
+    </p>
+
+    <p>
+        <label for="id_end_time">End time:</label>
+        <input type="text" name="end_time" id="id_end_time" placeholder="YYYY-MM-DD HH:MM">
+        <button type="button" onclick="setNow('id_end_time')">Now</button>
+    </p>
 
     <script>
     function setNow(fieldId) {
@@ -31,9 +31,7 @@
         const day = String(now.getDate()).padStart(2, '0');
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
-        
         const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}`;
-
         document.getElementById(fieldId).value = formattedTime;
     }
     </script>

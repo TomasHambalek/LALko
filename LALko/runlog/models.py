@@ -34,8 +34,7 @@ class Machine(models.Model):
 
 class Operator(models.Model):
     """Operator/Technician performing the operation (e.g., THA, JKL)."""
-    # Odstraněn OneToOneField na User, použijeme jen pole 'name'
-    name = models.CharField(max_length=50, unique=True, null=True, blank=True)
+    name = models.CharField(max_length=50, unique=True)
     
     class Meta:
         verbose_name = "Operator"
@@ -81,7 +80,7 @@ class Operation(models.Model):
     machine = models.ForeignKey(Machine, on_delete=models.CASCADE, null=True, blank=True)
     machining_type = models.ForeignKey(MachiningType, on_delete=models.CASCADE, null=True, blank=True)
     # Vztah k operátorům
-    operator = models.ForeignKey(Operator, on_delete=models.CASCADE, null=True, blank=True)
+    operator = models.ForeignKey(Operator, on_delete=models.CASCADE)
     
     # Technická data
     x_levelling = models.FloatField(blank=True, null=True)

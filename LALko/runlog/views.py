@@ -35,3 +35,21 @@ def machine_list(request):
     """List all machines."""
     machines = Machine.objects.all()
     return render(request, "runlog/machine_list.html", {"machines": machines})
+
+def edit_operation(request, operation_id):
+    operation = get_object_or_404(Operation, pk=operation_id)
+    if request.method == 'POST':
+        form = OperationForm(request.POST, instance=operation)
+        if form.is_valid():
+            form.save()
+            return redirect('operation_detail', operation_id=operation.id)
+    else:
+        form = OperationForm(instance=operation)
+    return render(request, 'runlog/edit_operation.html', {'form': form, 'operation': operation})
+
+def delete_operation(request, operation_id):
+    operation = get_object_or_404(Operation, pk=operation_id)
+    if request.method == 'POST':
+        operation.delete()
+        return redirect('operation_list')
+    return render(request, 'runlog/operation_confirm_delete.html', {'operation': operation})

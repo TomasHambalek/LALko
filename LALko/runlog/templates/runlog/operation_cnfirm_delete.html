@@ -1,0 +1,11 @@
+{% extends "runlog/base.html" %}
+
+{% block content %}
+<h2>Delete operation</h2>
+<p>Are you sure you want to delete the operation for "{{ operation.project.project_number }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="{% url 'operation_detail' operation.id %}">Cancel</a>
+</form>
+{% endblock %}

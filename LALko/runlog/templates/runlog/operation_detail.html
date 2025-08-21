@@ -2,15 +2,28 @@
 
 {% block content %}
 <h2>Operation detail</h2>
-<p><b>Task:</b> {{ operation.task.task_name }} ({{ operation.task.status }})</p>
+
+<p>
+    <b>Task:</b> {{ operation.task.task_name }}
+    {% if operation.task.status %}
+        ({{ operation.task.status }})
+    {% endif %}
+</p>
 <p><b>Machine:</b> {{ operation.machine.name }}</p>
-<p><b>Operator:</b> {{ operation.operator.user.username }}</p>
+<p><b>Operator:</b> {% if operation.operator %}{{ operation.operator.name }}{% endif %}</p>
 <p><b>Project:</b> {{ operation.project.project_number }} / {{ operation.project.mold_number }}</p>
 <p><b>Machining type:</b> {{ operation.machining_type.name }}</p>
 <p><b>X levelling:</b> {{ operation.x_levelling }}</p>
 <p><b>Y levelling:</b> {{ operation.y_levelling }}</p>
-<p><b>Start time:</b> {{ operation.start_time }}</p>
-<p><b>End time:</b> {{ operation.end_time }}</p>
-<p><b>Duration:</b> {{ operation.duration }}</p>
+
+<p><b>Start time:</b> {% if operation.start_time %}{{ operation.start_time }}{% endif %}</p>
+<p><b>End time:</b> {% if operation.end_time %}{{ operation.end_time }}{% endif %}</p>
+<p><b>Duration:</b> {% if operation.duration %}{{ operation.duration }}{% endif %}</p>
+
 <p><b>Notes:</b> {{ operation.notes }}</p>
+
+<hr>
+<a href="{% url 'edit_operation' operation.id %}">Edit</a>
+<a href="{% url 'delete_operation' operation.id %}">Delete</a>
+
 {% endblock %}
