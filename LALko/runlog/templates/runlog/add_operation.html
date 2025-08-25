@@ -5,22 +5,11 @@
 <form method="post">
     {% csrf_token %}
 
-    {% for field in form %}
-        {% if field.name != 'start_time' and field.name != 'end_time' %}
-            <p>{{ field.label_tag }} {{ field }}</p>
-        {% endif %}
-    {% endfor %}
+    {{ form.as_p }}
 
     <p>
-        <label for="id_start_time">Start time:</label>
-        <input type="text" name="start_time" id="id_start_time" placeholder="YYYY-MM-DD HH:MM">
-        <button type="button" onclick="setNow('id_start_time')">Now</button>
-    </p>
-
-    <p>
-        <label for="id_end_time">End time:</label>
-        <input type="text" name="end_time" id="id_end_time" placeholder="YYYY-MM-DD HH:MM">
-        <button type="button" onclick="setNow('id_end_time')">Now</button>
+        <button type="button" onclick="setNow('id_start_time')">Set Start Time to Now</button>
+        <button type="button" onclick="setNow('id_end_time')">Set End Time to Now</button>
     </p>
 
     <script>

@@ -1,0 +1,10 @@
+{% extends "runlog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Filter Operations</h2>
+<form method="get" action="{% url 'operation_list' %}">
+    {% crispy filter.form %}
+    <button type="submit" class="btn btn-primary">Apply Filter</button>
+</form>
+{% endblock %}

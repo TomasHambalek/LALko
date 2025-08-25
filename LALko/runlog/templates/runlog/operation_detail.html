@@ -3,31 +3,28 @@
 {% block content %}
 <h2>Operation detail</h2>
 
-<p>
-    <b>Task:</b> {{ operation.task.name }}
-    {% if operation.task.status %}
-        ({{ operation.task.status }})
-    {% endif %}
-</p>
-<p>
-    <b>Task:</b> {{ operation.task.name }}
-    {% if operation.task.status %}
-        ({{ operation.task.status }})
-    {% endif %}
-</p>
+<p><b>Project Number:</b> {% if operation.project_number %}{{ operation.project_number.name }}{% endif %}</p>
+<p><b>AAC Mold Number:</b> {% if operation.aac_mold_number %}{{ operation.aac_mold_number.name }}{% endif %}</p>
+<p><b>Mold Number:</b> {% if operation.mold_number %}{{ operation.mold_number.name }}{% endif %}</p>
+<p><b>Surface:</b> {% if operation.surface %}{{ operation.surface.name }}{% endif %}</p>
+<p><b>Moldset Preform:</b> {% if operation.moldset_preform %}{{ operation.moldset_preform.name }}{% endif %}</p>
+<p><b>Parent Layout:</b> {% if operation.parent_layout %}{{ operation.parent_layout.name }}{% endif %}</p>
+
+<p><b>Task:</b> {{ operation.task.name }}</p>
+<p><b>Status:</b> {% if operation.status %}{{ operation.status.name }}{% endif %}</p>
 <p><b>Machine:</b> {{ operation.machine.name }}</p>
 <p><b>Operator:</b> {% if operation.operator %}{{ operation.operator.name }}{% endif %}</p>
-<p><b>Project:</b> {{ operation.project.project_number }} / {{ operation.project.mold_number }}</p>
-<p><b>Machining type:</b> {{ operation.machining_type.name }}</p>
-<p><b>X levelling:</b> {{ operation.x_levelling }}</p>
-<p><b>Y levelling:</b> {{ operation.y_levelling }}</p>
+<p><b>Machining type:</b> {% if operation.machining_type %}{{ operation.machining_type.name }}{% endif %}</p>
+<p><b>Description:</b> {{ operation.description|default:"No description" }}</p>
+<p><b>X levelling:</b> {{ operation.x_levelling|default:"N/A" }}</p>
+<p><b>Y levelling:</b> {{ operation.y_levelling|default:"N/A" }}</p>
 
 <p><b>Start time:</b> {% if operation.start_time %}{{ operation.start_time }}{% endif %}</p>
 <p><b>End time:</b> {% if operation.end_time %}{{ operation.end_time }}{% endif %}</p>
 <p><b>Duration:</b> {{ operation.duration|default:"0"|floatformat:"2" }} hours</p>
 
-<p><b>Note:</b> {{ operation.note }}</p>
-<p><b>Note2:</b> {{ operation.note2 }}</p>
+<p><b>Note:</b> {{ operation.note|default:"No note" }}</p>
+<p><b>Note2:</b> {{ operation.note2|default:"No note" }}</p>
 
 <hr>
 <a href="{% url 'edit_operation' operation.id %}">Edit</a>

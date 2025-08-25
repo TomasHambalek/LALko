@@ -5,20 +5,14 @@
 <form method="post">
     {% csrf_token %}
     
-    <p>
-        <label for="id_start_time">Start time:</label>
-        {{ form.start_time }}
-        <button type="button" onclick="setNow('id_start_time')">Now</button>
-    </p>
-
-    <p>
-        <label for="id_end_time">End time:</label>
-        {{ form.end_time }}
-        <button type="button" onclick="setNow('id_end_time')">Now</button>
-    </p>
-
     {% for field in form %}
-        {% if field.name != 'start_time' and field.name != 'end_time' %}
+        {% if field.name == 'start_time' or field.name == 'end_time' %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}
+                <button type="button" onclick="setNow('{{ field.id_for_label }}')">Now</button>
+            </p>
+        {% else %}
             <p>{{ field.label_tag }} {{ field }}</p>
         {% endif %}
     {% endfor %}

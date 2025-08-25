@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'runlog',
+    'django_tables2',
+    'django_filters',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +92,9 @@ DATABASES = {
         
         #silnější ale nepoužito: CREATE USER lalko_user WITH PASSWORD 'lalko_pass' SUPERUSER;
         #K připojení "psql -U lalko_user -d lalko_db -h localhost -W" a heslo "lalko_pass"
+        
+        #'CREATE DATABASE lalko_db;' 'DROP DATABASE lalko_db;'
+        #POSTUP: makemigrations*migrate*superuser*load_input_data.py*runserver
         #tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django
 
     }
@@ -138,3 +145,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/operations/'
 LOGOUT_REDIRECT_URL = '/'
 
+# Nastavení pro Django Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

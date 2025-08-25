@@ -1,19 +1,10 @@
 {% extends "runlog/base.html" %}
+{% load django_tables2 %}
 
 {% block content %}
 <h2>All Operations</h2>
 <a href="{% url 'add_operation' %}">Add new operation</a>
-<ul>
-    {% for op in operations %}
-        <li>
-            {{ op.id }}.
-            <a href="{% url 'operation_detail' op.id %}">
-                {{ op.task.name }} by {{ op.operator.name }}
-            </a>
-            ({{ op.start_time }})
-        </li>
-    {% empty %}
-        <li>No operations recorded yet.</li>
-    {% endfor %}
-</ul>
+<a href="{% url 'operation_filter' %}">Filter Operations</a>
+
+{% render_table table %}
 {% endblock %}
