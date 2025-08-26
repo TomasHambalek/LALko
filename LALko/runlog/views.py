@@ -29,7 +29,6 @@ def operation_detail(request, pk):
     operation = get_object_or_404(Operation, pk=pk)
     return render(request, "runlog/operation_detail.html", {"operation": operation})
 
-@login_required
 def my_operations(request):
     """List operations for logged-in user only."""
     # Zde je potřeba se ujistit, že model Operator má ForeignKey na User,
@@ -37,7 +36,6 @@ def my_operations(request):
     operations = Operation.objects.filter(operator__user=request.user)
     return render(request, "runlog/my_operations.html", {"operations": operations})
 
-@login_required
 def add_operation(request):
     """Add new operation via form."""
     if request.method == "POST":

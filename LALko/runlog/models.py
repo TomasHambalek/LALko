@@ -104,6 +104,13 @@ class Status(models.Model):
 class Surface(models.Model):
     name = models.CharField(max_length=100, unique=True, null=True, blank=True)
 
+    class Meta:
+        verbose_name = "Surface"
+        verbose_name_plural = "Surfaces"
+
+    def __str__(self):
+        return self.name
+
 class Task(models.Model):
     """Type of task performed (from Values sheet)."""
     name = models.CharField(max_length=100)
@@ -120,7 +127,8 @@ class Operation(models.Model):
     aac_mold_number = models.ForeignKey(AACMoldNumber, on_delete=models.SET_NULL, null=True, blank=True)
     machine = models.ForeignKey(Machine, on_delete=models.CASCADE, null=True, blank=True)
     machining_type = models.ForeignKey(MachiningType, on_delete=models.CASCADE, null=True, blank=True)
-    mold_number = models.ForeignKey(MoldNumber, on_delete=models.SET_NULL, null=True, blank=True)
+    #mold_number = models.ForeignKey(MoldNumber, on_delete=models.SET_NULL, null=True, blank=True)
+    mold_number = models.CharField(max_length=10, blank=True, null=True)
     moldset_preform = models.ForeignKey(MoldsetPreform, on_delete=models.SET_NULL, null=True, blank=True)
     operator = models.ForeignKey(Operator, on_delete=models.CASCADE)
     parent_layout = models.ForeignKey(ParentLayout, on_delete=models.SET_NULL, null=True, blank=True)
@@ -129,7 +137,6 @@ class Operation(models.Model):
     surface = models.ForeignKey(Surface, on_delete=models.SET_NULL, null=True, blank=True)    
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
 
-    # Technická data
     description = models.TextField(blank=True, null=True)
 
     x_levelling = models.FloatField(blank=True, null=True)

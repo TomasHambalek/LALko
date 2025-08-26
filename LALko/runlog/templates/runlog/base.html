@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>LALko</title>
-    <style>
-        /* Jednoduchý CSS pro lepší vzhled a rozložení */
-        body { font-family: sans-serif; margin: 2em; }
-        nav { margin-bottom: 1em; }
-        nav a { margin-right: 1em; text-decoration: none; }
-        .user-info { display: inline-block; margin-left: 1em; }
-    </style>
 </head>
 <body>
     <h1>LALko – Laser Ablation Logger</h1>
     <nav>
-        <a href="{% url 'operation_list' %}">Operations</a>
+        <a href="{% url 'operation_list' %}">All Operations</a> |
+        <a href="{% url 'operation_filter' %}">Filter Operations</a> |
+        <a href="{% url 'add_operation' %}">Add New Operation</a> |
+        <a href="{% url 'admin:index' %}">Admin Panel</a> |
         
         {% if user.is_authenticated %}
-            <a href="{% url 'my_operations' %}">My Operations</a>
-            <span class="user-info">Logged in as: <strong>{{ user.username }}</strong></span>
+            {#<a href="{% url 'my_operations' %}">My Operations (Temporary)</a> |#}
             
-            <form action="{% url 'admin:logout' %}" method="post" style="display:inline; margin-left:1em;">
+            <form action="{% url 'admin:logout' %}" method="post" style="display:inline;">
                 {% csrf_token %}
-                <button type="submit" style="background:none; border:none; color:inherit; cursor:pointer; padding:0; text-decoration:underline;">
+                <button type="submit" style="background:none; border:none; color:inherit; cursor:pointer; padding:0;">
                     Logout
                 </button>
             </form>
+
         {% else %}
             <a href="/admin/login/">Login</a>
         {% endif %}

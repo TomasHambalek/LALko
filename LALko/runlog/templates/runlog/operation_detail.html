@@ -5,7 +5,8 @@
 
 <p><b>Project Number:</b> {% if operation.project_number %}{{ operation.project_number.name }}{% endif %}</p>
 <p><b>AAC Mold Number:</b> {% if operation.aac_mold_number %}{{ operation.aac_mold_number.name }}{% endif %}</p>
-<p><b>Mold Number:</b> {% if operation.mold_number %}{{ operation.mold_number.name }}{% endif %}</p>
+{#<p><b>Mold Number:</b> {% if operation.mold_number %}{{ operation.mold_number.name }}{% endif %}</p>#}
+<p><b>Mold Number:</b> {{ operation.mold_number }}</p>
 <p><b>Surface:</b> {% if operation.surface %}{{ operation.surface.name }}{% endif %}</p>
 <p><b>Moldset Preform:</b> {% if operation.moldset_preform %}{{ operation.moldset_preform.name }}{% endif %}</p>
 <p><b>Parent Layout:</b> {% if operation.parent_layout %}{{ operation.parent_layout.name }}{% endif %}</p>
