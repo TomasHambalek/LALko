@@ -1,0 +1,3218 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "runlog",
+    "model": "aacmoldnumber"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "runlog",
+    "model": "machine"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "runlog",
+    "model": "machiningtype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "runlog",
+    "model": "moldnumber"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "runlog",
+    "model": "moldsetpreform"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "runlog",
+    "model": "operator"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "runlog",
+    "model": "parentlayout"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "runlog",
+    "model": "projectnumber"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "runlog",
+    "model": "status"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "runlog",
+    "model": "surface"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "runlog",
+    "model": "task"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "runlog",
+    "model": "operation"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a0teh2v3jx7nlgujpnflnw6stdij37bp",
+  "fields": {
+    "session_data": ".eJxVjMsOgyAURP-FdUN4Cdpl934D4V4uxbaBRHTV9N_VxIVdzpwz82U-rEv2a6PZT5HdmWS3awcB31QOEF-hPCvHWpZ5An4o_KSNjzXS53G6fwc5tLyvicCgcwkJnUWlgaQaEBGkBQGgTK_7PSWyAoFMB51KgwhCS5Oswsh-GyNfOTo:1ur1Gb:RuI6HGA6zw352Bgh9gITmh_LpBsAuJ-rZw6HJHsLBaM",
+    "expire_date": "2025-09-09T21:31:45.057Z"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 1,
+  "fields": {
+    "name": "G00"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 2,
+  "fields": {
+    "name": "G01"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 3,
+  "fields": {
+    "name": "G02"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 4,
+  "fields": {
+    "name": "G03"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 5,
+  "fields": {
+    "name": "G04"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 6,
+  "fields": {
+    "name": "G05"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 7,
+  "fields": {
+    "name": "G06"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 8,
+  "fields": {
+    "name": "G07"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 9,
+  "fields": {
+    "name": "G08"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 10,
+  "fields": {
+    "name": "G09"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 11,
+  "fields": {
+    "name": "G10"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 12,
+  "fields": {
+    "name": "G11"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 13,
+  "fields": {
+    "name": "G12"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 14,
+  "fields": {
+    "name": "G13"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 15,
+  "fields": {
+    "name": "G14"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 16,
+  "fields": {
+    "name": "G15"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 17,
+  "fields": {
+    "name": "G16"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 18,
+  "fields": {
+    "name": "G17"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 19,
+  "fields": {
+    "name": "G18"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 20,
+  "fields": {
+    "name": "G19"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 21,
+  "fields": {
+    "name": "G20"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 22,
+  "fields": {
+    "name": "G21"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 23,
+  "fields": {
+    "name": "G22"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 24,
+  "fields": {
+    "name": "G23"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 25,
+  "fields": {
+    "name": "G24"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 26,
+  "fields": {
+    "name": "G25"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 27,
+  "fields": {
+    "name": "G26"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 28,
+  "fields": {
+    "name": "G27"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 29,
+  "fields": {
+    "name": "G28"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 30,
+  "fields": {
+    "name": "G29"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 31,
+  "fields": {
+    "name": "G30"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 32,
+  "fields": {
+    "name": "G31"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 33,
+  "fields": {
+    "name": "G32"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 34,
+  "fields": {
+    "name": "G33"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 35,
+  "fields": {
+    "name": "G34"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 36,
+  "fields": {
+    "name": "G35"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 37,
+  "fields": {
+    "name": "G36"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 38,
+  "fields": {
+    "name": "G37"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 39,
+  "fields": {
+    "name": "G38"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 40,
+  "fields": {
+    "name": "G39"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 41,
+  "fields": {
+    "name": "G40"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 42,
+  "fields": {
+    "name": "G41"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 43,
+  "fields": {
+    "name": "G42"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 44,
+  "fields": {
+    "name": "G43"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 45,
+  "fields": {
+    "name": "G44"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 46,
+  "fields": {
+    "name": "G45"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 47,
+  "fields": {
+    "name": "G46"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 48,
+  "fields": {
+    "name": "G47"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 49,
+  "fields": {
+    "name": "G48"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 50,
+  "fields": {
+    "name": "G49"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 51,
+  "fields": {
+    "name": "G50"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 52,
+  "fields": {
+    "name": "Y00"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 53,
+  "fields": {
+    "name": "Y01"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 54,
+  "fields": {
+    "name": "Y02"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 55,
+  "fields": {
+    "name": "Y03"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 56,
+  "fields": {
+    "name": "Y04"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 57,
+  "fields": {
+    "name": "Y05"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 58,
+  "fields": {
+    "name": "Y06"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 59,
+  "fields": {
+    "name": "Y07"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 60,
+  "fields": {
+    "name": "Y08"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 61,
+  "fields": {
+    "name": "Y09"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 62,
+  "fields": {
+    "name": "Y10"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 63,
+  "fields": {
+    "name": "Y11"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 64,
+  "fields": {
+    "name": "Y12"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 65,
+  "fields": {
+    "name": "Y13"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 66,
+  "fields": {
+    "name": "Y14"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 67,
+  "fields": {
+    "name": "Y15"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 68,
+  "fields": {
+    "name": "Y16"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 69,
+  "fields": {
+    "name": "Y17"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 70,
+  "fields": {
+    "name": "Y18"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 71,
+  "fields": {
+    "name": "Y19"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 72,
+  "fields": {
+    "name": "Y20"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 73,
+  "fields": {
+    "name": "Y21"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 74,
+  "fields": {
+    "name": "Y22"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 75,
+  "fields": {
+    "name": "Y23"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 76,
+  "fields": {
+    "name": "Y24"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 77,
+  "fields": {
+    "name": "Y25"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 78,
+  "fields": {
+    "name": "Y26"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 79,
+  "fields": {
+    "name": "Y27"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 80,
+  "fields": {
+    "name": "Y28"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 81,
+  "fields": {
+    "name": "Y29"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 82,
+  "fields": {
+    "name": "Y30"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 83,
+  "fields": {
+    "name": "Y31"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 84,
+  "fields": {
+    "name": "Y32"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 85,
+  "fields": {
+    "name": "Y33"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 86,
+  "fields": {
+    "name": "Y34"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 87,
+  "fields": {
+    "name": "Y35"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 88,
+  "fields": {
+    "name": "Y36"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 89,
+  "fields": {
+    "name": "Y37"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 90,
+  "fields": {
+    "name": "Y38"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 91,
+  "fields": {
+    "name": "Y39"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 92,
+  "fields": {
+    "name": "Y40"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 93,
+  "fields": {
+    "name": "Y41"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 94,
+  "fields": {
+    "name": "Y42"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 95,
+  "fields": {
+    "name": "Y43"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 96,
+  "fields": {
+    "name": "Y44"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 97,
+  "fields": {
+    "name": "Y45"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 98,
+  "fields": {
+    "name": "Y46"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 99,
+  "fields": {
+    "name": "Y47"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 100,
+  "fields": {
+    "name": "Y48"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 101,
+  "fields": {
+    "name": "Y49"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 102,
+  "fields": {
+    "name": "Y50"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 103,
+  "fields": {
+    "name": "Y51"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 104,
+  "fields": {
+    "name": "Y52"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 105,
+  "fields": {
+    "name": "Y53"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 106,
+  "fields": {
+    "name": "Y54"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 107,
+  "fields": {
+    "name": "Y55"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 108,
+  "fields": {
+    "name": "Y56"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 109,
+  "fields": {
+    "name": "Y57"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 110,
+  "fields": {
+    "name": "Y58"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 111,
+  "fields": {
+    "name": "Y59"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 112,
+  "fields": {
+    "name": "Y60"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 113,
+  "fields": {
+    "name": "Y61"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 114,
+  "fields": {
+    "name": "Y62"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 115,
+  "fields": {
+    "name": "Y63"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 116,
+  "fields": {
+    "name": "Y64"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 117,
+  "fields": {
+    "name": "Y65"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 118,
+  "fields": {
+    "name": "Y66"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 119,
+  "fields": {
+    "name": "Y67"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 120,
+  "fields": {
+    "name": "Y68"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 121,
+  "fields": {
+    "name": "Y69"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 122,
+  "fields": {
+    "name": "Y70"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 123,
+  "fields": {
+    "name": "Y71"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 124,
+  "fields": {
+    "name": "Y72"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 125,
+  "fields": {
+    "name": "Y73"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 126,
+  "fields": {
+    "name": "Y74"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 127,
+  "fields": {
+    "name": "Y75"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 128,
+  "fields": {
+    "name": "Y76"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 129,
+  "fields": {
+    "name": "Y77"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 130,
+  "fields": {
+    "name": "Y78"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 131,
+  "fields": {
+    "name": "Y79"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 132,
+  "fields": {
+    "name": "Y80"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 133,
+  "fields": {
+    "name": "Y81"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 134,
+  "fields": {
+    "name": "Y82"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 135,
+  "fields": {
+    "name": "Y83"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 136,
+  "fields": {
+    "name": "Y84"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 137,
+  "fields": {
+    "name": "Y85"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 138,
+  "fields": {
+    "name": "Y86"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 139,
+  "fields": {
+    "name": "Y87"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 140,
+  "fields": {
+    "name": "Y88"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 141,
+  "fields": {
+    "name": "Y89"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 142,
+  "fields": {
+    "name": "Y90"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 143,
+  "fields": {
+    "name": "Y91"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 144,
+  "fields": {
+    "name": "Y92"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 145,
+  "fields": {
+    "name": "Y93"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 146,
+  "fields": {
+    "name": "Y94"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 147,
+  "fields": {
+    "name": "Y95"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 148,
+  "fields": {
+    "name": "Y96"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 149,
+  "fields": {
+    "name": "Y97"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 150,
+  "fields": {
+    "name": "Y98"
+  }
+},
+{
+  "model": "runlog.aacmoldnumber",
+  "pk": 151,
+  "fields": {
+    "name": "Y99"
+  }
+},
+{
+  "model": "runlog.machine",
+  "pk": 1,
+  "fields": {
+    "name": "P400 Máňa"
+  }
+},
+{
+  "model": "runlog.machine",
+  "pk": 2,
+  "fields": {
+    "name": "S500U Káťa"
+  }
+},
+{
+  "model": "runlog.machiningtype",
+  "pk": 1,
+  "fields": {
+    "name": "Line By Line"
+  }
+},
+{
+  "model": "runlog.machiningtype",
+  "pk": 2,
+  "fields": {
+    "name": "Spiral"
+  }
+},
+{
+  "model": "runlog.machiningtype",
+  "pk": 3,
+  "fields": {
+    "name": "LongPlates"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 1,
+  "fields": {
+    "name": "00"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 2,
+  "fields": {
+    "name": "01"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 3,
+  "fields": {
+    "name": "02"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 4,
+  "fields": {
+    "name": "03"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 5,
+  "fields": {
+    "name": "04"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 6,
+  "fields": {
+    "name": "05"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 7,
+  "fields": {
+    "name": "06"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 8,
+  "fields": {
+    "name": "07"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 9,
+  "fields": {
+    "name": "08"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 10,
+  "fields": {
+    "name": "09"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 11,
+  "fields": {
+    "name": "10"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 12,
+  "fields": {
+    "name": "11"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 13,
+  "fields": {
+    "name": "12"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 14,
+  "fields": {
+    "name": "13"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 15,
+  "fields": {
+    "name": "14"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 16,
+  "fields": {
+    "name": "15"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 17,
+  "fields": {
+    "name": "16"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 18,
+  "fields": {
+    "name": "17"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 19,
+  "fields": {
+    "name": "18"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 20,
+  "fields": {
+    "name": "19"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 21,
+  "fields": {
+    "name": "20"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 22,
+  "fields": {
+    "name": "21"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 23,
+  "fields": {
+    "name": "22"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 24,
+  "fields": {
+    "name": "23"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 25,
+  "fields": {
+    "name": "24"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 26,
+  "fields": {
+    "name": "25"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 27,
+  "fields": {
+    "name": "26"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 28,
+  "fields": {
+    "name": "27"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 29,
+  "fields": {
+    "name": "28"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 30,
+  "fields": {
+    "name": "29"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 31,
+  "fields": {
+    "name": "30"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 32,
+  "fields": {
+    "name": "31"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 33,
+  "fields": {
+    "name": "32"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 34,
+  "fields": {
+    "name": "33"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 35,
+  "fields": {
+    "name": "34"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 36,
+  "fields": {
+    "name": "35"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 37,
+  "fields": {
+    "name": "36"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 38,
+  "fields": {
+    "name": "37"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 39,
+  "fields": {
+    "name": "38"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 40,
+  "fields": {
+    "name": "39"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 41,
+  "fields": {
+    "name": "40"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 42,
+  "fields": {
+    "name": "41"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 43,
+  "fields": {
+    "name": "42"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 44,
+  "fields": {
+    "name": "43"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 45,
+  "fields": {
+    "name": "44"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 46,
+  "fields": {
+    "name": "45"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 47,
+  "fields": {
+    "name": "46"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 48,
+  "fields": {
+    "name": "47"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 49,
+  "fields": {
+    "name": "48"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 50,
+  "fields": {
+    "name": "49"
+  }
+},
+{
+  "model": "runlog.moldsetpreform",
+  "pk": 51,
+  "fields": {
+    "name": "50"
+  }
+},
+{
+  "model": "runlog.operator",
+  "pk": 1,
+  "fields": {
+    "name": "JPR"
+  }
+},
+{
+  "model": "runlog.operator",
+  "pk": 2,
+  "fields": {
+    "name": "THA"
+  }
+},
+{
+  "model": "runlog.operator",
+  "pk": 3,
+  "fields": {
+    "name": "JPR+THA"
+  }
+},
+{
+  "model": "runlog.operator",
+  "pk": 4,
+  "fields": {
+    "name": "ALE"
+  }
+},
+{
+  "model": "runlog.operator",
+  "pk": 5,
+  "fields": {
+    "name": "JLI"
+  }
+},
+{
+  "model": "runlog.operator",
+  "pk": 6,
+  "fields": {
+    "name": "SBA"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 1,
+  "fields": {
+    "name": "00"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 2,
+  "fields": {
+    "name": "01"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 3,
+  "fields": {
+    "name": "02"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 4,
+  "fields": {
+    "name": "03"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 5,
+  "fields": {
+    "name": "04"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 6,
+  "fields": {
+    "name": "05"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 7,
+  "fields": {
+    "name": "06"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 8,
+  "fields": {
+    "name": "07"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 9,
+  "fields": {
+    "name": "08"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 10,
+  "fields": {
+    "name": "09"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 11,
+  "fields": {
+    "name": "10"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 12,
+  "fields": {
+    "name": "11"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 13,
+  "fields": {
+    "name": "12"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 14,
+  "fields": {
+    "name": "13"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 15,
+  "fields": {
+    "name": "14"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 16,
+  "fields": {
+    "name": "15"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 17,
+  "fields": {
+    "name": "16"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 18,
+  "fields": {
+    "name": "17"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 19,
+  "fields": {
+    "name": "18"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 20,
+  "fields": {
+    "name": "19"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 21,
+  "fields": {
+    "name": "20"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 22,
+  "fields": {
+    "name": "21"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 23,
+  "fields": {
+    "name": "22"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 24,
+  "fields": {
+    "name": "23"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 25,
+  "fields": {
+    "name": "24"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 26,
+  "fields": {
+    "name": "25"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 27,
+  "fields": {
+    "name": "26"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 28,
+  "fields": {
+    "name": "27"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 29,
+  "fields": {
+    "name": "28"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 30,
+  "fields": {
+    "name": "29"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 31,
+  "fields": {
+    "name": "30"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 32,
+  "fields": {
+    "name": "31"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 33,
+  "fields": {
+    "name": "32"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 34,
+  "fields": {
+    "name": "33"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 35,
+  "fields": {
+    "name": "34"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 36,
+  "fields": {
+    "name": "35"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 37,
+  "fields": {
+    "name": "36"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 38,
+  "fields": {
+    "name": "37"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 39,
+  "fields": {
+    "name": "38"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 40,
+  "fields": {
+    "name": "39"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 41,
+  "fields": {
+    "name": "40"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 42,
+  "fields": {
+    "name": "41"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 43,
+  "fields": {
+    "name": "42"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 44,
+  "fields": {
+    "name": "43"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 45,
+  "fields": {
+    "name": "44"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 46,
+  "fields": {
+    "name": "45"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 47,
+  "fields": {
+    "name": "46"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 48,
+  "fields": {
+    "name": "47"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 49,
+  "fields": {
+    "name": "48"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 50,
+  "fields": {
+    "name": "49"
+  }
+},
+{
+  "model": "runlog.parentlayout",
+  "pk": 51,
+  "fields": {
+    "name": "50"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 1,
+  "fields": {
+    "name": "P048"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 2,
+  "fields": {
+    "name": "P080"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 3,
+  "fields": {
+    "name": "P081"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 4,
+  "fields": {
+    "name": "P082"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 5,
+  "fields": {
+    "name": "P085"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 6,
+  "fields": {
+    "name": "P087"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 7,
+  "fields": {
+    "name": "P088"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 8,
+  "fields": {
+    "name": "P089"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 9,
+  "fields": {
+    "name": "P090"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 10,
+  "fields": {
+    "name": "P091"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 11,
+  "fields": {
+    "name": "P092"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 12,
+  "fields": {
+    "name": "P094"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 13,
+  "fields": {
+    "name": "P095"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 14,
+  "fields": {
+    "name": "P097"
+  }
+},
+{
+  "model": "runlog.projectnumber",
+  "pk": 15,
+  "fields": {
+    "name": "P101"
+  }
+},
+{
+  "model": "runlog.status",
+  "pk": 1,
+  "fields": {
+    "name": "On Hold"
+  }
+},
+{
+  "model": "runlog.status",
+  "pk": 2,
+  "fields": {
+    "name": "In progress"
+  }
+},
+{
+  "model": "runlog.status",
+  "pk": 3,
+  "fields": {
+    "name": "Finished"
+  }
+},
+{
+  "model": "runlog.surface",
+  "pk": 1,
+  "fields": {
+    "name": "S1"
+  }
+},
+{
+  "model": "runlog.surface",
+  "pk": 2,
+  "fields": {
+    "name": "S2"
+  }
+},
+{
+  "model": "runlog.surface",
+  "pk": 3,
+  "fields": {
+    "name": "S1B"
+  }
+},
+{
+  "model": "runlog.surface",
+  "pk": 4,
+  "fields": {
+    "name": "S2B"
+  }
+},
+{
+  "model": "runlog.surface",
+  "pk": 5,
+  "fields": {
+    "name": "S1C"
+  }
+},
+{
+  "model": "runlog.surface",
+  "pk": 6,
+  "fields": {
+    "name": "S2C"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 1,
+  "fields": {
+    "name": "Arrow on Mold"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 2,
+  "fields": {
+    "name": "Minimold Ablation"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 3,
+  "fields": {
+    "name": "Mold Ablation"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 4,
+  "fields": {
+    "name": "Mold Cleaning"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 5,
+  "fields": {
+    "name": "Stud Ablation"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 6,
+  "fields": {
+    "name": "Vision Markers"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 7,
+  "fields": {
+    "name": "Mold Blackening"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 8,
+  "fields": {
+    "name": "“UP” On Turtle"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 9,
+  "fields": {
+    "name": "Turtle Number"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 10,
+  "fields": {
+    "name": "Service"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 11,
+  "fields": {
+    "name": "Project Run-in"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 12,
+  "fields": {
+    "name": "Electrode Labels"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 13,
+  "fields": {
+    "name": "Test"
+  }
+},
+{
+  "model": "runlog.task",
+  "pk": 14,
+  "fields": {
+    "name": "Electrode Ablation"
+  }
+},
+{
+  "model": "runlog.operation",
+  "pk": 2,
+  "fields": {
+    "aac_mold_number": null,
+    "machine": null,
+    "machining_type": null,
+    "mold_number": null,
+    "moldset_preform": null,
+    "operator": 2,
+    "parent_layout": null,
+    "project_number": null,
+    "status": null,
+    "surface": null,
+    "task": 13,
+    "description": "",
+    "x_levelling": null,
+    "y_levelling": null,
+    "start_time": "2025-08-25T22:15:00Z",
+    "end_time": "2025-08-25T22:15:00Z",
+    "duration": 0.0,
+    "note": "",
+    "note2": ""
+  }
+},
+{
+  "model": "runlog.operation",
+  "pk": 4,
+  "fields": {
+    "aac_mold_number": null,
+    "machine": null,
+    "machining_type": null,
+    "mold_number": null,
+    "moldset_preform": null,
+    "operator": 3,
+    "parent_layout": null,
+    "project_number": null,
+    "status": null,
+    "surface": null,
+    "task": 7,
+    "description": "",
+    "x_levelling": null,
+    "y_levelling": null,
+    "start_time": null,
+    "end_time": null,
+    "duration": null,
+    "note": "",
+    "note2": ""
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add AAC Mold Number",
+    "content_type": [
+      "runlog",
+      "aacmoldnumber"
+    ],
+    "codename": "add_aacmoldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change AAC Mold Number",
+    "content_type": [
+      "runlog",
+      "aacmoldnumber"
+    ],
+    "codename": "change_aacmoldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete AAC Mold Number",
+    "content_type": [
+      "runlog",
+      "aacmoldnumber"
+    ],
+    "codename": "delete_aacmoldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view AAC Mold Number",
+    "content_type": [
+      "runlog",
+      "aacmoldnumber"
+    ],
+    "codename": "view_aacmoldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Machine",
+    "content_type": [
+      "runlog",
+      "machine"
+    ],
+    "codename": "add_machine"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Machine",
+    "content_type": [
+      "runlog",
+      "machine"
+    ],
+    "codename": "change_machine"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Machine",
+    "content_type": [
+      "runlog",
+      "machine"
+    ],
+    "codename": "delete_machine"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Machine",
+    "content_type": [
+      "runlog",
+      "machine"
+    ],
+    "codename": "view_machine"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Machining Type",
+    "content_type": [
+      "runlog",
+      "machiningtype"
+    ],
+    "codename": "add_machiningtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Machining Type",
+    "content_type": [
+      "runlog",
+      "machiningtype"
+    ],
+    "codename": "change_machiningtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Machining Type",
+    "content_type": [
+      "runlog",
+      "machiningtype"
+    ],
+    "codename": "delete_machiningtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Machining Type",
+    "content_type": [
+      "runlog",
+      "machiningtype"
+    ],
+    "codename": "view_machiningtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Mold Number",
+    "content_type": [
+      "runlog",
+      "moldnumber"
+    ],
+    "codename": "add_moldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Mold Number",
+    "content_type": [
+      "runlog",
+      "moldnumber"
+    ],
+    "codename": "change_moldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Mold Number",
+    "content_type": [
+      "runlog",
+      "moldnumber"
+    ],
+    "codename": "delete_moldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Mold Number",
+    "content_type": [
+      "runlog",
+      "moldnumber"
+    ],
+    "codename": "view_moldnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Moldset Preform",
+    "content_type": [
+      "runlog",
+      "moldsetpreform"
+    ],
+    "codename": "add_moldsetpreform"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Moldset Preform",
+    "content_type": [
+      "runlog",
+      "moldsetpreform"
+    ],
+    "codename": "change_moldsetpreform"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Moldset Preform",
+    "content_type": [
+      "runlog",
+      "moldsetpreform"
+    ],
+    "codename": "delete_moldsetpreform"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Moldset Preform",
+    "content_type": [
+      "runlog",
+      "moldsetpreform"
+    ],
+    "codename": "view_moldsetpreform"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Operator",
+    "content_type": [
+      "runlog",
+      "operator"
+    ],
+    "codename": "add_operator"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Operator",
+    "content_type": [
+      "runlog",
+      "operator"
+    ],
+    "codename": "change_operator"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Operator",
+    "content_type": [
+      "runlog",
+      "operator"
+    ],
+    "codename": "delete_operator"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Operator",
+    "content_type": [
+      "runlog",
+      "operator"
+    ],
+    "codename": "view_operator"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add Parent Layout",
+    "content_type": [
+      "runlog",
+      "parentlayout"
+    ],
+    "codename": "add_parentlayout"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change Parent Layout",
+    "content_type": [
+      "runlog",
+      "parentlayout"
+    ],
+    "codename": "change_parentlayout"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete Parent Layout",
+    "content_type": [
+      "runlog",
+      "parentlayout"
+    ],
+    "codename": "delete_parentlayout"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view Parent Layout",
+    "content_type": [
+      "runlog",
+      "parentlayout"
+    ],
+    "codename": "view_parentlayout"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add Project Number",
+    "content_type": [
+      "runlog",
+      "projectnumber"
+    ],
+    "codename": "add_projectnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change Project Number",
+    "content_type": [
+      "runlog",
+      "projectnumber"
+    ],
+    "codename": "change_projectnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete Project Number",
+    "content_type": [
+      "runlog",
+      "projectnumber"
+    ],
+    "codename": "delete_projectnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view Project Number",
+    "content_type": [
+      "runlog",
+      "projectnumber"
+    ],
+    "codename": "view_projectnumber"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add Status",
+    "content_type": [
+      "runlog",
+      "status"
+    ],
+    "codename": "add_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change Status",
+    "content_type": [
+      "runlog",
+      "status"
+    ],
+    "codename": "change_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete Status",
+    "content_type": [
+      "runlog",
+      "status"
+    ],
+    "codename": "delete_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view Status",
+    "content_type": [
+      "runlog",
+      "status"
+    ],
+    "codename": "view_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add surface",
+    "content_type": [
+      "runlog",
+      "surface"
+    ],
+    "codename": "add_surface"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change surface",
+    "content_type": [
+      "runlog",
+      "surface"
+    ],
+    "codename": "change_surface"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete surface",
+    "content_type": [
+      "runlog",
+      "surface"
+    ],
+    "codename": "delete_surface"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view surface",
+    "content_type": [
+      "runlog",
+      "surface"
+    ],
+    "codename": "view_surface"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add Task",
+    "content_type": [
+      "runlog",
+      "task"
+    ],
+    "codename": "add_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change Task",
+    "content_type": [
+      "runlog",
+      "task"
+    ],
+    "codename": "change_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete Task",
+    "content_type": [
+      "runlog",
+      "task"
+    ],
+    "codename": "delete_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view Task",
+    "content_type": [
+      "runlog",
+      "task"
+    ],
+    "codename": "view_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add Operation",
+    "content_type": [
+      "runlog",
+      "operation"
+    ],
+    "codename": "add_operation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change Operation",
+    "content_type": [
+      "runlog",
+      "operation"
+    ],
+    "codename": "change_operation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete Operation",
+    "content_type": [
+      "runlog",
+      "operation"
+    ],
+    "codename": "delete_operation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view Operation",
+    "content_type": [
+      "runlog",
+      "operation"
+    ],
+    "codename": "view_operation"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$DQvacobGbnyVbLgmaM8Nvv$isDyNzqGL8ITZ+TpQJFQ9C1kpjy8977Y1ToEpYbItzI=",
+    "last_login": "2025-08-26T21:31:45.051Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "tomashambalek@eu.aacoptics.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-08-25T20:03:21.279Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-08-25T21:04:12.531Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "runlog",
+      "operation"
+    ],
+    "object_id": "3",
+    "object_repr": "Operation for N/A",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]
