@@ -97,6 +97,9 @@ DATABASES = {
         #POSTUP: python manage.py makemigrations; python manage.pymigrate; python manage.py createsuperuser; python manage.py load_input_data; python manage.py runserver
         #tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django
 
+        #pro requirements "pip freeze > requirements.txt"
+        #pro export databáze "python manage.py dumpdata runlog.Operator runlog.Machine > fixtures/initial_data.json"
+
     }
 }
 
