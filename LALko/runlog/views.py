@@ -6,35 +6,35 @@ from .tables import OperationTable
 from .filters import OperationFilter
 
 def operation_filter(request):
-    """View for the filter form page."""
-    f = OperationFilter(request.GET, queryset=Operation.objects.all())
+    """Zobrazí formulář pro filtrování."""
+    filter_form = OperationFilter(request.GET, queryset=Operation.objects.all())
+    
+    # Ujistěte se, že tato funkce je správně napsaná
     return render(request, "runlog/operation_filter.html", {
-        "filter": f
+        "filter_form": filter_form
+    })
+
+def operation_results(request):
+    filter_form = OperationFilter(request.GET, queryset=Operation.objects.all())
+    filtered_qs = filter_form.qs
+    table = OperationTable(filtered_qs)
+    
+    table.paginate(page=request.GET.get("page", 1), per_page=10)
+    
+    return render(request, "runlog/operation_results.html", {
+        "table": table,
+        "filter_form": filter_form
     })
 
 def operation_list(request):
-    """View for the table with filtered results."""
-    f = OperationFilter(request.GET, queryset=Operation.objects.all())
-    table = OperationTable(f.qs)
-
+    """Zobrazí všechny operace (bez filtrování)."""
+    table = OperationTable(Operation.objects.all())
     table.paginate(page=request.GET.get("page", 1), per_page=10)
-
-    return render(request, "runlog/operation_list.html", {
-        "table": table,
-        "filter": f
-    })
-
+    return render(request, "runlog/operation_list.html", {"table": table})
 def operation_detail(request, pk):
     """Detail of a single operation."""
     operation = get_object_or_404(Operation, pk=pk)
     return render(request, "runlog/operation_detail.html", {"operation": operation})
-
-def my_operations(request):
-    """List operations for logged-in user only."""
-    # Zde je potřeba se ujistit, že model Operator má ForeignKey na User,
-    # aby filtr fungoval správně. Pokud ho nemá, musíte ho přidat.
-    operations = Operation.objects.filter(operator__user=request.user)
-    return render(request, "runlog/my_operations.html", {"operations": operations})
 
 def add_operation(request):
     """Add new operation via form."""

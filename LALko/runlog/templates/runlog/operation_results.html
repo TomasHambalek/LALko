@@ -1,0 +1,9 @@
+{% extends "runlog/base.html" %}
+{% load django_tables2 %}
+
+{% block content %}
+<h2>Filtered Results</h2>
+<a href="{% url 'operation_filter' %}">Back to Filters</a>
+<a href="{% url 'operation_list' %}">All Operations</a>
+{% render_table table %}
+{% endblock %}

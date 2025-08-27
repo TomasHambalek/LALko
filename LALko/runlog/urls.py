@@ -8,14 +8,12 @@ urlpatterns = [
     
     # URL cesty pro operace
     path("operations/filter/", views.operation_filter, name="operation_filter"),
+    path("operations/results/", views.operation_results, name="operation_results"),
     path("operations/", views.operation_list, name="operation_list"),
     path("operations/<int:pk>/", views.operation_detail, name="operation_detail"),
     path("operations/add/", views.add_operation, name="add_operation"),
     path('operations/<int:pk>/edit/', views.edit_operation, name='edit_operation'),
     path('operations/<int:pk>/delete/', views.delete_operation, name='delete_operation'),
-    
-    # Správné URL pro My Operations (používá view, ne přesměrování)
-    path('my-operations/', views.my_operations, name='my_operations'),
     
     # Všechny URL pro přihlášení, odhlášení atd.
     path('accounts/', include('django.contrib.auth.urls')),
