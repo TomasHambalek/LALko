@@ -141,9 +141,9 @@ def delete_operation(request, pk):
     return render(request, 'runlog/operation_confirm_delete.html', {'operation': operation})
 
 @login_required
-def admin_dashboard(request):
+def activity_log(request):
     logs = ChangeLog.objects.order_by('-timestamp')[:50] # Zobrazí posledních 50 záznamů
     context = {
         'logs': logs,
     }
-    return render(request, 'runlog/admin_dashboard.html', context)
+    return render(request, 'runlog/activity_log.html', context)

@@ -94,7 +94,7 @@ DATABASES = {
         #K připojení "psql -U lalko_user -d lalko_db -h localhost -W" a heslo "lalko_pass"
         
         #'CREATE DATABASE lalko_db;' 'DROP DATABASE lalko_db;'
-        #POSTUP: makemigrations*migrate*superuser*load_input_data.py*runserver
+        #POSTUP: python manage.py makemigrations; python manage.pymigrate; python manage.py createsuperuser; python manage.py load_input_data; python manage.py runserver
         #tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django
 
     }
