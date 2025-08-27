@@ -3,25 +3,33 @@
 {% block content %}
 <h2>Operation detail</h2>
 
-<p><b>Project Number:</b> {% if operation.project_number %}{{ operation.project_number.name }}{% endif %}</p>
-<p><b>AAC Mold Number:</b> {% if operation.aac_mold_number %}{{ operation.aac_mold_number.name }}{% endif %}</p>
-{#<p><b>Mold Number:</b> {% if operation.mold_number %}{{ operation.mold_number.name }}{% endif %}</p>#}
+<p><b>Project Number:</b> {{ operation.project_number }}</p>
+<p><b>AAC Mold Number:</b> {{ operation.aac_mold_number }}</p>
 <p><b>Mold Number:</b> {{ operation.mold_number }}</p>
-<p><b>Surface:</b> {% if operation.surface %}{{ operation.surface.name }}{% endif %}</p>
-<p><b>Moldset Preform:</b> {% if operation.moldset_preform %}{{ operation.moldset_preform.name }}{% endif %}</p>
-<p><b>Parent Layout:</b> {% if operation.parent_layout %}{{ operation.parent_layout.name }}{% endif %}</p>
+<p><b>Surface:</b> {{ operation.surface }}</p>
+<p><b>Moldset Preform:</b> {{ operation.moldset_preform }}</p>
+<p><b>Parent Layout:</b> {{ operation.parent_layout }}</p>
 
-<p><b>Task:</b> {{ operation.task.name }}</p>
-<p><b>Status:</b> {% if operation.status %}{{ operation.status.name }}{% endif %}</p>
-<p><b>Machine:</b> {{ operation.machine.name }}</p>
-<p><b>Operator:</b> {% if operation.operator %}{{ operation.operator.name }}{% endif %}</p>
-<p><b>Machining type:</b> {% if operation.machining_type %}{{ operation.machining_type.name }}{% endif %}</p>
+<p><b>Task:</b> {{ operation.task }}</p>
+<p><b>Status:</b> {{ operation.status }}</p>
+<p><b>Machine:</b> {{ operation.machine }}</p>
+
+<p>
+    <b>Operators:</b>
+    {% for operator in operation.operators.all %}
+        <span>{{ operator }}</span>{% if not forloop.last %}, {% endif %}
+    {% empty %}
+        <span>N/A</span>
+    {% endfor %}
+</p>
+
+<p><b>Machining type:</b> {{ operation.machining_type }}</p>
 <p><b>Description:</b> {{ operation.description|default:"No description" }}</p>
 <p><b>X levelling:</b> {{ operation.x_levelling|default:"N/A" }}</p>
 <p><b>Y levelling:</b> {{ operation.y_levelling|default:"N/A" }}</p>
 
-<p><b>Start time:</b> {% if operation.start_time %}{{ operation.start_time }}{% endif %}</p>
-<p><b>End time:</b> {% if operation.end_time %}{{ operation.end_time }}{% endif %}</p>
+<p><b>Start time:</b> {{ operation.start_time }}</p>
+<p><b>End time:</b> {{ operation.end_time }}</p>
 <p><b>Duration:</b> {{ operation.duration|default:"0"|floatformat:"2" }} hours</p>
 
 <p><b>Note:</b> {{ operation.note|default:"No note" }}</p>

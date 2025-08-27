@@ -13,7 +13,7 @@ class OperationForm(forms.ModelForm):
             "machining_type",
             "mold_number",
             "moldset_preform",
-            "operator",
+            "operators",
             "parent_layout",
             "project_number",
             "status",

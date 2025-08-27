@@ -74,7 +74,7 @@ class OperationAdmin(admin.ModelAdmin):
         "x_levelling",
         "y_levelling",
     )
-    
+    #DOPLNIT
     search_fields = (
         "project_number__name",
         "aac_mold_number__name",
@@ -91,7 +91,7 @@ class OperationAdmin(admin.ModelAdmin):
         "note",
         "note2",
     )
-    
+    #DOPLNIT
     list_filter = (
         "project_number",
         "aac_mold_number",
@@ -101,7 +101,7 @@ class OperationAdmin(admin.ModelAdmin):
         "parent_layout",
         "machine",
         "machining_type",
-        "operator",
+        "operators",
         "status",
         "task",
     )

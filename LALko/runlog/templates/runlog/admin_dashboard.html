@@ -1,0 +1,39 @@
+{% extends "runlog/base.html" %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<h3>Recent Activity Log</h3>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Model</th>
+            <th>Object ID</th>
+            <th>User</th>
+            <th>Timestamp</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.action }}</td>
+            <td>{{ log.model_name }}</td>
+            <td>{{ log.object_id }}</td>
+            <td>{{ log.user|default:"Anonymous" }}</td>
+            <td>{{ log.timestamp|date:"Y-m-d H:i:s" }}</td>
+            <td>
+                {% if log.action == 'updated' %}
+                    <p><b>Before:</b> {{ log.before_change }}</p>
+                    <p><b>After:</b> {{ log.after_change }}</p>
+                {% elif log.action == 'deleted' %}
+                    <p><b>Deleted data:</b> {{ log.before_change }}</p>
+                {% elif log.action == 'created' %}
+                    <p><b>New data:</b> {{ log.after_change }}</p>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

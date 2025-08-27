@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+#from .models import Operation
 
 class AACMoldNumber(models.Model):
     name = models.CharField(max_length=100, unique=True, null=True, blank=True)
@@ -10,16 +11,6 @@ class AACMoldNumber(models.Model):
         
     def __str__(self):
         return str(self.name) or "N/A"
-
-# class Description(models.Model):
-#     """Detailed description for a task."""
-#     name = models.TextField(null=True, blank=True)
-
-#     class Meta:
-#         verbose_name = "Description"
-#         verbose_name_plural = "Descriptions"
-#     def __str__(self):
-#         return str(self.name) or "N/A"
     
 class Machine(models.Model):
     """Machine available for operations (e.g., P400 Máňa, S500U Káťa)."""
@@ -130,7 +121,8 @@ class Operation(models.Model):
     #mold_number = models.ForeignKey(MoldNumber, on_delete=models.SET_NULL, null=True, blank=True)
     mold_number = models.CharField(max_length=10, blank=True, null=True)
     moldset_preform = models.ForeignKey(MoldsetPreform, on_delete=models.SET_NULL, null=True, blank=True)
-    operator = models.ForeignKey(Operator, on_delete=models.CASCADE)
+    #operator = models.ForeignKey(Operator, on_delete=models.CASCADE)
+    operators = models.ManyToManyField("Operator", blank=True, verbose_name="Operators")
     parent_layout = models.ForeignKey(ParentLayout, on_delete=models.SET_NULL, null=True, blank=True)
     project_number = models.ForeignKey(ProjectNumber, on_delete=models.SET_NULL, null=True, blank=True)
     status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True, blank=True)
@@ -164,3 +156,23 @@ class Operation(models.Model):
         
     def __str__(self):
         return f"Operation for {self.project_number or 'N/A'}"
+    
+    # runlog/models.py
+
+class ChangeLog(models.Model):
+    ACTION_CHOICES = (
+        ('created', 'Created'),
+        ('updated', 'Updated'),
+        ('deleted', 'Deleted'),
+    )
+    
+    action = models.CharField(max_length=10, choices=ACTION_CHOICES)
+    model_name = models.CharField(max_length=50)
+    object_id = models.IntegerField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    before_change = models.JSONField(null=True, blank=True)
+    after_change = models.JSONField(null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.user} {self.action} {self.model_name} (ID: {self.object_id})"

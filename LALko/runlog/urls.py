@@ -9,6 +9,7 @@ urlpatterns = [
     # URL cesty pro operace
     path("operations/filter/", views.operation_filter, name="operation_filter"),
     path("operations/results/", views.operation_results, name="operation_results"),
+    path("admin_dashboard/", views.admin_dashboard, name="admin_dashboard"),
     path("operations/", views.operation_list, name="operation_list"),
     path("operations/<int:pk>/", views.operation_detail, name="operation_detail"),
     path("operations/add/", views.add_operation, name="add_operation"),
