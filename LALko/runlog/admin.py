@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    AACMoldNumber, Machine, MachiningType, MoldNumber, MoldsetPreform,
+    AACMoldNumber, Machine, MachiningType, MoldsetPreform,
     Operator, ParentLayout, ProjectNumber, Status, Surface, Task, Operation
 )
 
@@ -15,10 +15,6 @@ class MachineAdmin(admin.ModelAdmin):
 
 @admin.register(MachiningType)
 class MachiningTypeAdmin(admin.ModelAdmin):
-    list_display = ("name",)
-
-@admin.register(MoldNumber)
-class MoldNumberAdmin(admin.ModelAdmin):
     list_display = ("name",)
 
 @admin.register(MoldsetPreform)
@@ -54,44 +50,44 @@ class TaskAdmin(admin.ModelAdmin):
 class OperationAdmin(admin.ModelAdmin):
     list_display = (
         "id",
+        "get_project_number",
         "get_aac_mold_number",
+        "mold_number",
+        "get_surface",
+        "get_moldset_preform",
+        "get_parent_layout",
         "get_machine",
         "get_machining_type",
-        "get_mold_number",
-        "get_moldset_preform",
-        "get_operator",
-        "get_parent_layout",
-        "get_project_number",
-        "get_surface",
         "get_status",
         "get_task",
+        "get_operators",
         "start_time",
         "end_time",
         "duration",
-        "get_description_short",  # Zkrácená verze description
-        "get_note_short",         # Zkrácená verze note
-        "get_note2_short",        # Zkrácená verze note2
+        "get_description_short",
+        "get_note_short",
+        "get_note2_short",
         "x_levelling",
         "y_levelling",
     )
-    #DOPLNIT
+    
     search_fields = (
         "project_number__name",
         "aac_mold_number__name",
-        "mold_number__name",
+        "mold_number",
         "surface__name",
         "moldset_preform__name",
         "parent_layout__name",
         "machine__name",
         "machining_type__name",
-        "operator__name",
+        "operators__name",
         "status__name",
         "task__name",
         "description",
         "note",
         "note2",
     )
-    #DOPLNIT
+    
     list_filter = (
         "project_number",
         "aac_mold_number",
@@ -106,6 +102,11 @@ class OperationAdmin(admin.ModelAdmin):
         "task",
     )
 
+    # Pomocná metoda pro zobrazení M:N relace
+    def get_operators(self, obj):
+        return ", ".join([str(operator) for operator in obj.operators.all()])
+    get_operators.short_description = "Operators"
+
     # Pomocné metody pro zkrácení textových polí
     def get_description_short(self, obj):
         return obj.description[:20] + "..." if obj.description and len(obj.description) > 20 else obj.description
@@ -118,7 +119,7 @@ class OperationAdmin(admin.ModelAdmin):
     def get_note2_short(self, obj):
         return obj.note2[:20] + "..." if obj.note2 and len(obj.note2) > 20 else obj.note2
     get_note2_short.short_description = "Note 2"
-    
+
     # Pomocné metody pro zobrazení názvů z cizích klíčů
     def get_project_number(self, obj):
         return obj.project_number.name if obj.project_number else "N/A"
@@ -127,23 +128,7 @@ class OperationAdmin(admin.ModelAdmin):
     def get_aac_mold_number(self, obj):
         return obj.aac_mold_number.name if obj.aac_mold_number else "N/A"
     get_aac_mold_number.short_description = "AAC Mold Number"
-    
-    def get_mold_number(self, obj):
-        return obj.mold_number.name if obj.mold_number else "N/A"
-    get_mold_number.short_description = "Mold Number"
 
-    def get_surface(self, obj):
-        return obj.surface.name if obj.surface else "N/A"
-    get_surface.short_description = "Surface"
-
-    def get_moldset_preform(self, obj):
-        return obj.moldset_preform.name if obj.moldset_preform else "N/A"
-    get_moldset_preform.short_description = "Moldset Preform"
-
-    def get_parent_layout(self, obj):
-        return obj.parent_layout.name if obj.parent_layout else "N/A"
-    get_parent_layout.short_description = "Parent Layout"
-    
     def get_machine(self, obj):
         return obj.machine.name if obj.machine else "N/A"
     get_machine.short_description = "Machine"
@@ -152,14 +137,22 @@ class OperationAdmin(admin.ModelAdmin):
         return obj.machining_type.name if obj.machining_type else "N/A"
     get_machining_type.short_description = "Machining Type"
     
-    def get_operator(self, obj):
-        return obj.operator.name if obj.operator else "N/A"
-    get_operator.short_description = "Operator"
+    def get_moldset_preform(self, obj):
+        return obj.moldset_preform.name if obj.moldset_preform else "N/A"
+    get_moldset_preform.short_description = "Moldset Preform"
+
+    def get_parent_layout(self, obj):
+        return obj.parent_layout.name if obj.parent_layout else "N/A"
+    get_parent_layout.short_description = "Parent Layout"
     
     def get_status(self, obj):
         return obj.status.name if obj.status else "N/A"
     get_status.short_description = "Status"
     
+    def get_surface(self, obj):
+        return obj.surface.name if obj.surface else "N/A"
+    get_surface.short_description = "Surface"
+
     def get_task(self, obj):
         return obj.task.name if obj.task else "N/A"
     get_task.short_description = "Task"

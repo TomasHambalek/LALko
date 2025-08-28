@@ -99,7 +99,8 @@ DATABASES = {
 
         #pro requirements "pip freeze > requirements.txt"
         #pro export databáze "python manage.py dumpdata runlog.Operator runlog.Machine > fixtures/initial_data.json"
-
+        #source venv/bin/activate
+        #python manage.py loaddata runlog/fixtures/initial_data.json
     }
 }
 
