@@ -1,3 +1,37 @@
+        #POSTGRES ZAČÁTEK NA NOVÉM PC
+        # sudo -u postgres psql
+        # CREATE USER lalko_user WITH PASSWORD 'lalko_pass';
+        # CREATE DATABASE lalko_db OWNER lalko_user;
+        # GRANT ALL PRIVILEGES ON DATABASE lalko_db TO lalko_user;
+        # \l (zjištění, že databáze existuje, vyjedu z toho kliknutím na "q")
+        # připojení se k databázi pomocí \c lalko_db
+
+        #RESET DATABÁZE
+        # DROP DATABASE lalko_db;
+        # CREATE DATABASE lalko_db;
+        # python manage.py makemigrations; python manage.pymigrate;
+        # python manage.py createsuperuser (tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django)
+        # python manage.py load_input_data
+        # python manage.py runserver
+        
+        #EXPORT PROJECT
+        # pro requirements "pip freeze > requirements.txt"
+        # pro export databáze "python manage.py dumpdata runlog.Operation > fixtures/operation_data.json"
+        # git add .
+        # git commit -m "První commit"
+        # git push -u origin main
+
+        #IMPORT PROJECT
+        # jedno LALko: source venv/bin/activate
+        # jedno LALko: git status; git pull origin main
+        # dve LALka: pip install -r requirements.txt
+
+        #POSTGRES IMPORT
+        # sudo -u postgres psql
+        # v Djangu - python manage.py migrate
+        # v Djangu - python manage.py loaddata fixtures/initial_data.json
+        # python manage.py runserver
+        # python manage.py createsuperuser (tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django)
 """
 Django settings for LALko project.
 
@@ -85,22 +119,6 @@ DATABASES = {
         'PASSWORD': 'lalko_pass',
         'HOST': 'localhost',
         'PORT': '5432',
-        #sudo -u postgres psql
-        #CREATE DATABASE lalko_db;
-        #CREATE USER lalko_user WITH PASSWORD 'lalko_pass';
-        #GRANT ALL PRIVILEGES ON DATABASE lalko_db TO lalko_user;
-        
-        #silnější ale nepoužito: CREATE USER lalko_user WITH PASSWORD 'lalko_pass' SUPERUSER;
-        #K připojení "psql -U lalko_user -d lalko_db -h localhost -W" a heslo "lalko_pass"
-        
-        #'CREATE DATABASE lalko_db;' 'DROP DATABASE lalko_db;'
-        #POSTUP: python manage.py makemigrations; python manage.pymigrate; python manage.py createsuperuser; python manage.py load_input_data; python manage.py runserver
-        #tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django
-
-        #pro requirements "pip freeze > requirements.txt"
-        #pro export databáze "python manage.py dumpdata runlog.Operator runlog.Machine > fixtures/initial_data.json"
-        #source venv/bin/activate
-        #python manage.py loaddata runlog/fixtures/initial_data.json
     }
 }
 
