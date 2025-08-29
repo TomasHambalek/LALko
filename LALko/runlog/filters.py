@@ -17,7 +17,10 @@ class OperationFilter(django_filters.FilterSet):
     parent_layout = django_filters.ModelChoiceFilter(queryset=ParentLayout.objects.all(), label="Parent Layout")
     machine = django_filters.ModelChoiceFilter(queryset=Machine.objects.all(), label="Machine")
     machining_type = django_filters.ModelChoiceFilter(queryset=MachiningType.objects.all(), label="Machining Type")
-    operator = django_filters.ModelChoiceFilter(queryset=Operator.objects.all(), label="Operator")
+    
+    # OPRAVENÝ ŘÁDEK: Změna z ModelChoiceFilter na ModelMultipleChoiceFilter a z "operator" na "operators"
+    operators = django_filters.ModelMultipleChoiceFilter(queryset=Operator.objects.all(), label="Operators")
+    
     status = django_filters.ModelChoiceFilter(queryset=Status.objects.all(), label="Status")
     task = django_filters.ModelChoiceFilter(queryset=Task.objects.all(), label="Task")
 
@@ -37,4 +40,4 @@ class OperationFilter(django_filters.FilterSet):
 
     class Meta:
         model = Operation
-        fields = [] # Zde necháme prázdné, protože definujeme každý filtr ručně
+        fields = []
