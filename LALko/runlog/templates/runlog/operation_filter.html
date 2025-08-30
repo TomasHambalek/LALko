@@ -1,12 +1,90 @@
 {% extends "runlog/base.html" %}
 
 {% block content %}
-<h2>Filter Operations</h2>
-<form method="get" action="{% url 'operation_results' %}">
-    {% csrf_token %} {{ filter_form.management_form }}
-    {{ filter_form.form.as_p }}
+<div class="container mt-4">
+    <h2 class="mb-4">Filter Operations</h2>
+    <form method="get" action="{% url 'operation_results' %}">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="{{ filter_form.project_number.id_for_label }}" class="form-label">Project Number</label>
+                    {{ filter_form.project_number }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.aac_mold_number.id_for_label }}" class="form-label">AAC Mold Number</label>
+                    {{ filter_form.aac_mold_number }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.mold_number.id_for_label }}" class="form-label">Mold Number</label>
+                    {{ filter_form.mold_number }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.surface.id_for_label }}" class="form-label">Surface</label>
+                    {{ filter_form.surface }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.moldset_preform.id_for_label }}" class="form-label">Moldset Preform</label>
+                    {{ filter_form.moldset_preform }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.parent_layout.id_for_label }}" class="form-label">Parent Layout</label>
+                    {{ filter_form.parent_layout }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.machine.id_for_label }}" class="form-label">Machine</label>
+                    {{ filter_form.machine }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.machining_type.id_for_label }}" class="form-label">Machining Type</label>
+                    {{ filter_form.machining_type }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.operators.id_for_label }}" class="form-label">Operators</label>
+                    {{ filter_form.operators }}
+                    <div class="form-text text-muted">For selecting more hold CTRL</div>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.status.id_for_label }}" class="form-label">Status</label>
+                    {{ filter_form.status }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.task.id_for_label }}" class="form-label">Task</label>
+                    {{ filter_form.task }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.description.id_for_label }}" class="form-label">Description</label>
+                    {{ filter_form.description }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.x_levelling.id_for_label }}" class="form-label">X Levelling</label>
+                    {{ filter_form.x_levelling }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.y_levelling.id_for_label }}" class="form-label">Y Levelling</label>
+                    {{ filter_form.y_levelling }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.start_time.id_for_label }}" class="form-label">Start Time (from)</label>
+                    {{ filter_form.start_time }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.end_time.id_for_label }}" class="form-label">End Time (to)</label>
+                    {{ filter_form.end_time }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.note.id_for_label }}" class="form-label">Note</label>
+                    {{ filter_form.note }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ filter_form.note2.id_for_label }}" class="form-label">Note 2</label>
+                    {{ filter_form.note2 }}
+                </div>
+            </div>
+        </div>
 
-    <button type="submit">Apply Filter</button>
-    <a href="{% url 'operation_filter' %}">Reset Filters</a>
-</form>
+        <button type="submit" class="btn btn-primary mt-3">Filter</button>
+        <a href="{% url 'operation_filter' %}" class="btn btn-secondary mt-3">Clear Filters</a>
+    </form>
+</div>
 {% endblock %}

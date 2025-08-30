@@ -45,3 +45,5 @@ class OperationTable(tables.Table):
             "status", "task", "start_time", "end_time", "duration",
             "short_description", "x_levelling", "y_levelling", "note", "note2"
         )
+        orderable = False
+        

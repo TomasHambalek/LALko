@@ -2,7 +2,9 @@
 {% load django_tables2 %}
 
 {% block content %}
-<h2>All Operations</h2>
+<div class="container mt-4">
+    <h2 class="mb-4">All Operations</h2>
 
-{% render_table table %}
+    {% render_table table %}
+</div>
 {% endblock %}

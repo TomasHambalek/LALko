@@ -1,37 +1,51 @@
 {% extends "runlog/base.html" %}
 
 {% block content %}
-<h2>{{ form.instance.pk|yesno:"Edit,Add new" }} operation</h2>
-<form method="post">
-    {% csrf_token %}
+<div class="container mt-4">
+    <h2 class="mb-4">{{ form.instance.pk|yesno:"Edit,Add new" }} operation</h2>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
 
-    {% for field in form %}
-        {% if field.name == 'start_time' or field.name == 'end_time' %}
-            <p>
-                {{ field.label_tag }}
-                {{ field }}
-                <button type="button" onclick="setNow('{{ field.id_for_label }}')">Now</button>
-            </p>
-        {% else %}
-            <p>{{ field.label_tag }} {{ field }}</p>
-        {% endif %}
-    {% endfor %}
+        <div class="row">
+            <div class="col-md-6">
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <div class="form-text text-muted">{{ field.help_text }}</div>
+                        {% endif %}
+                        
+                        {% if field.name == 'start_time' or field.name == 'end_time' %}
+                            <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="setNow('{{ field.id_for_label }}')">Now</button>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
 
-    <script>
-    function setNow(fieldId) {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
+        <script>
+            document.querySelectorAll('input, select, textarea').forEach(function(element) {
+                if (element.type === 'checkbox') {
+                    element.classList.add('form-check-input');
+                } else {
+                    element.classList.add('form-control');
+                }
+            });
+            
+            function setNow(fieldId) {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const formattedTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+                document.getElementById(fieldId).value = formattedTime;
+            }
+        </script>
         
-        const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}`;
-
-        document.getElementById(fieldId).value = formattedTime;
-    }
-    </script>
-    
-    <button type="submit">Save</button>
-</form>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+    </form>
+</div>
 {% endblock %}

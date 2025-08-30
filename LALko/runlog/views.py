@@ -9,11 +9,10 @@ from .filters import OperationFilter
 
 def operation_filter(request):
     """Zobrazí formulář pro filtrování."""
-    filter_form = OperationFilter(request.GET, queryset=Operation.objects.all())
+    f = OperationFilter(request.GET, queryset=Operation.objects.all())
     
-    # Ujistěte se, že tato funkce je správně napsaná
     return render(request, "runlog/operation_filter.html", {
-        "filter_form": filter_form
+        "filter_form": f.form  # Zde je oprava
     })
 
 def operation_results(request):
