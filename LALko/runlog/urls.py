@@ -12,8 +12,8 @@ urlpatterns = [
     path("activity_log/", views.activity_log, name="activity_log"),
     path("operations/", views.operation_list, name="operation_list"),
     path("operations/<int:pk>/", views.operation_detail, name="operation_detail"),
-    path("operations/add/", views.add_operation, name="add_operation"),
-    path('operations/<int:pk>/edit/', views.edit_operation, name='edit_operation'),
+    path('operation/add/', views.manage_operation, name='add_operation'),
+    path('operation/edit/<int:pk>/', views.manage_operation, name='edit_operation'),
     path('operations/<int:pk>/delete/', views.delete_operation, name='delete_operation'),
     
     # Všechny URL pro přihlášení, odhlášení atd.

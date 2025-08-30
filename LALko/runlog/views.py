@@ -65,51 +65,25 @@ def get_object_data(obj):
 
 # --- Vaše pohledy ---
 
-# runlog/views.py
-def add_operation(request):
-    """Přidání nové operace s logováním."""
-    if request.method == "POST":
-        form = OperationForm(request.POST)
-        if form.is_valid():
-            new_operation = form.save()
-            # ...
-            return redirect("operation_list")
-    else:
-        form = OperationForm()
-
-    # Změňte název šablony na ten, který jste upravoval
-    return render(request, "runlog/add_operation.html", {"form": form})
-
-def edit_operation(request, pk):
-    """Úprava operace s logováním změn."""
-    operation = get_object_or_404(Operation, pk=pk)
-
-    # Uložíme si stav PŘED změnou.
-    before_change_data = get_object_data(operation)
+def manage_operation(request, pk=None):
+    """
+    Spravuje přidávání a úpravu operací pomocí jedné funkce.
+    Pokud pk není zadané, přidává se nová operace.
+    Pokud je pk zadané, upravuje se existující operace.
+    """
+    operation = None
+    if pk:
+        operation = get_object_or_404(Operation, pk=pk)
 
     if request.method == 'POST':
         form = OperationForm(request.POST, instance=operation)
         if form.is_valid():
             form.save()
-            
-            # Získáme stav PO změně.
-            after_change_data = get_object_data(operation)
-
-            ChangeLog.objects.create(
-                action='updated',
-                model_name='Operation',
-                object_id=operation.pk,
-                user=request.user if request.user.is_authenticated else None,
-                before_change=before_change_data,
-                after_change=after_change_data
-            )
-            
-            return redirect('operation_detail', pk=operation.id)
+            return redirect('operation_list') # Přesměrování na seznam operací
     else:
         form = OperationForm(instance=operation)
     
-    return render(request, 'runlog/edit_operation.html', {'form': form, 'operation': operation})
-
+    return render(request, 'runlog/operation_form.html', {'form': form})
 def delete_operation(request, pk):
     """Smazání operace s logováním."""
     operation = get_object_or_404(Operation, pk=pk)

@@ -14,7 +14,7 @@ class OperationTable(tables.Table):
     def render_operators(self, record):
         return ", ".join([str(o) for o in record.operators.all()])
 
-    # Ostatní sloupce
+    # Ostatní sloupce s upravenými verbose_name
     project_number = tables.Column(accessor="project_number__name", verbose_name="Project Number")
     aac_mold_number = tables.Column(accessor="aac_mold_number__name", verbose_name="AAC Mold Number")
     mold_number = tables.Column(verbose_name="Mold Number")
@@ -29,21 +29,27 @@ class OperationTable(tables.Table):
 
     start_time = tables.DateTimeColumn(verbose_name="Start Time")
     end_time = tables.DateTimeColumn(verbose_name="End Time")
-    duration = tables.Column(verbose_name="Duration (hours)")
+    duration = tables.Column(verbose_name="Duration")  # Změna z "Duration (hours)"
     short_description = tables.Column(accessor="description", verbose_name="Description")
     x_levelling = tables.Column(verbose_name="X Levelling")
     y_levelling = tables.Column(verbose_name="Y Levelling")
     note = tables.Column(verbose_name="Note")
-    note2 = tables.Column(verbose_name="Note 2")
+    note2 = tables.Column(verbose_name="Note2")  # Změna z "Note 2"
+
+    # Přidání sloupce s tlačítkem Edit
+    actions = tables.TemplateColumn(
+        template_name="runlog/table_actions.html",
+        verbose_name="Actions"
+    )
 
     class Meta:
         model = Operation
         template_name = "django_tables2/bootstrap4.html"
+        orderable = False
+        order_by = ("-pk",)
         fields = (
             "id", "project_number", "aac_mold_number", "mold_number", "surface",
             "moldset_preform", "parent_layout", "machine", "machining_type", "operators", 
             "status", "task", "start_time", "end_time", "duration",
-            "short_description", "x_levelling", "y_levelling", "note", "note2"
+            "short_description", "x_levelling", "y_levelling", "note", "note2", "actions"
         )
-        orderable = False
-        
