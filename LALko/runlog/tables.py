@@ -20,7 +20,7 @@ class OperationTable(tables.Table):
     mold_number = tables.Column(verbose_name="Mold Number")
     surface = tables.Column(accessor="surface__name", verbose_name="Surface")
     moldset_preform = tables.Column(accessor="moldset_preform__name", verbose_name="Moldset Preform")
-    #operators = tables.Column(accessor='operators', verbose_name="Operators")
+    operators = tables.Column(accessor='operators', verbose_name="Operators")
     parent_layout = tables.Column(accessor="parent_layout__name", verbose_name="Parent Layout")
     machine = tables.Column(accessor="machine__name", verbose_name="Machine")
     machining_type = tables.Column(accessor="machining_type__name", verbose_name="Machining Type")

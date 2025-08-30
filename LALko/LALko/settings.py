@@ -1,3 +1,6 @@
+#all operations centrování/šířka sloupců
+# #co jsou povinná pole a upravit pořadí, aby to sedělo potom všude        
+
         #POSTGRES ZAČÁTEK NA NOVÉM PC
         # sudo -u postgres psql
         # CREATE USER lalko_user WITH PASSWORD 'lalko_pass';

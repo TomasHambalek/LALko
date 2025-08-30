@@ -1,0 +1,39 @@
+{% load django_tables2 %}
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        {% if table.show_header %}
+        <thead>
+            <tr>
+                {% for column in table.columns %}
+                <th {{ column.attrs.th.as_html }}>
+                    {% if column.orderable %}
+                    <a href="{% querystring table.prefixed_order_by_field=column.order_by_alias %}">{{ column.header }}</a>
+                    {% else %}
+                    {{ column.header }}
+                    {% endif %}
+                </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        {% endif %}
+        <tbody>
+            {% for row in table.page %}
+            <tr {{ table.attrs.tr.as_html }}>
+                {% for column, cell in row.items %}
+                <td {{ column.attrs.td.as_html }}>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% if table.has_footer %}
+        <tfoot>
+            <tr>
+                <td colspan="{{ table.columns|length }}">{{ table.footer }}</td>
+            </tr>
+        </tfoot>
+        {% endif %}
+    </table>
+</div>
+
+{% include "django_tables2/pagination.html" %}

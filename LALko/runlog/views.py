@@ -66,27 +66,20 @@ def get_object_data(obj):
 
 # --- Vaše pohledy ---
 
+# runlog/views.py
 def add_operation(request):
     """Přidání nové operace s logováním."""
     if request.method == "POST":
         form = OperationForm(request.POST)
         if form.is_valid():
             new_operation = form.save()
-            
-            ChangeLog.objects.create(
-                action='created',
-                model_name='Operation',
-                object_id=new_operation.pk,
-                user=request.user if request.user.is_authenticated else None,
-                before_change=None,
-                after_change=get_object_data(new_operation)
-            )
-            
+            # ...
             return redirect("operation_list")
     else:
         form = OperationForm()
-    
-    return render(request, "runlog/operation_form.html", {"form": form})
+
+    # Změňte název šablony na ten, který jste upravoval
+    return render(request, "runlog/add_operation.html", {"form": form})
 
 def edit_operation(request, pk):
     """Úprava operace s logováním změn."""
