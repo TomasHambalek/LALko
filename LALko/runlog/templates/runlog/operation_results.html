@@ -2,8 +2,16 @@
 {% load django_tables2 %}
 
 {% block content %}
-<h2>Filtered Results</h2>
-<a href="{% url 'operation_filter' %}">Back to Filters</a>
-<a href="{% url 'operation_list' %}">All Operations</a>
-{% render_table table %}
+<div class="container mt-4">
+    <h2 class="mb-4">Výsledky filtrování</h2>
+
+    <div class="mb-4">
+        <a href="{% url 'operation_filter' %}" class="btn btn-secondary me-2">Zpět k filtrům</a>
+        <a href="{% url 'operation_list' %}" class="btn btn-info">Všechny operace</a>
+    </div>
+    
+    <div class="table-responsive">
+        {% render_table table %}
+    </div>
+</div>
 {% endblock %}

@@ -62,3 +62,5 @@ class OperationTable(tables.Table):
             "status", "task", "start_time", "end_time", "duration",
             "short_description", "x_levelling", "y_levelling", "note", "note2", "actions"
         )
+        # Toto je opravená verze. Přidali jsme zpět třídy 'table' a 'table-striped'.
+        attrs = {"class": "table table-striped table-bordered text-center"}

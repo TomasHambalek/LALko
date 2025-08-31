@@ -1,11 +1,13 @@
 {% extends "runlog/base.html" %}
 
 {% block content %}
-<h2>Delete operation</h2>
-<p>Are you sure you want to delete the operation with ID "{{ operation.id }}"?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-    <a href="{% url 'operation_detail' operation.id %}">Cancel</a>
-</form>
+<div class="container mt-4">
+    <h2>Smazat operaci</h2>
+    <p class="mb-4">Opravdu si přejete smazat operaci s ID "{{ operation.id }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger me-2">Smazat</button>
+        <a href="{% url 'operation_detail' operation.id %}" class="btn btn-secondary">Zrušit</a>
+    </form>
+</div>
 {% endblock %}
