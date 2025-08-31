@@ -11,9 +11,18 @@
                 {% for field in form %}
                 <div class="mb-3">
                     <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                    {{ field }}
+                    
+                    {% if field.name == 'start_time' or field.name == 'end_time' %}
+                        <div class="input-group">
+                            {{ field }}
+                            <button type="button" class="btn btn-outline-secondary" onclick="setNow('{{ field.id_for_label }}')">Now</button>
+                        </div>
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+
                     {% if field.help_text %}
-                    <div class="form-text text-muted">{{ field.help_text }}</div>
+                        <div class="form-text text-muted">{{ field.help_text }}</div>
                     {% endif %}
                 </div>
                 {% endfor %}

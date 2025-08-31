@@ -1,0 +1,21 @@
+/* runlog/static/css/custom.css */
+body {
+    background-color: lightblue !important;
+}
+/* runlog/static/css/custom.css */
+
+/* Tento styl zajistí, že se kontejner zarovná doleva a bude odsazený. */
+.container {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: 10px !important;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Ostatní styly, které už máte a fungují. */
+td[style*="max-width"] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

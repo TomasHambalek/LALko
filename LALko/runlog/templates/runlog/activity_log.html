@@ -14,12 +14,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for log in logs %}
+            {% for log in page_obj %}
             <tr>
                 <td>
                     <span class="badge 
                         {% if log.action == 'created' %}bg-success
-                        {% elif log.action == 'updated' %}bg-warning text-dark
+                        {% elif log.action == 'edited' %}bg-warning text-dark
                         {% elif log.action == 'deleted' %}bg-danger
                         {% endif %}">
                         {{ log.action|upper }}
@@ -29,23 +29,64 @@
                 <td>{{ log.user|default:"Anonymous" }}</td>
                 <td>{{ log.timestamp|date:"d. F Y H:i:s" }}</td>
                 <td>
-                    {% if log.action == 'updated' %}
-                        <div class="mb-2"><strong>Changes:</strong></div>
-                        <pre class="bg-light p-2 mb-2">
-                            Before: {{ log.before_change }}
-                            After: {{ log.after_change }}
-                        </pre>
+                    {% if log.action == 'edited' and log.diffs %}
+                        <strong>Změny:</strong>
+                        <ul class="list-unstyled mb-0">
+                            {% for key, diff in log.diffs.items %}
+                                <li>
+                                    <strong>{{ key|title }}:</strong>
+                                    <span class="text-danger">Před: {{ diff.before }}</span>
+                                    <span class="text-success ms-2">Po: {{ diff.after }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     {% elif log.action == 'deleted' %}
-                        <div class="mb-2"><strong>Deleted data:</strong></div>
-                        <pre class="bg-light p-2">{{ log.before_change }}</pre>
+                        <strong>Smazaná data:</strong>
+                        <ul class="list-unstyled mb-0">
+                            {% for key, value in log.before_change.items %}
+                                {% if key != 'id' %}
+                                    <li><strong>{{ key|title }}:</strong> {{ value }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
                     {% elif log.action == 'created' %}
-                        <div class="mb-2"><strong>New data:</strong></div>
-                        <pre class="bg-light p-2">{{ log.after_change }}</pre>
+                        <strong>Nová data:</strong>
+                        <ul class="list-unstyled mb-0">
+                            {% for key, value in log.after_change.items %}
+                                {% if key != 'id' %}
+                                    <li><strong>{{ key|title }}:</strong> {{ value }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
                     {% endif %}
                 </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">Žádné aktivity nebyly zaznamenány.</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+
+    {# Navigace pro stránkování #}
+    {% if page_obj.has_other_pages %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">První</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Předchozí</a></li>
+            {% endif %}
+
+            <li class="page-item active"><a class="page-link" href="#">Stránka {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}</a></li>
+
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Další</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Poslední</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
 </div>
 {% endblock %}

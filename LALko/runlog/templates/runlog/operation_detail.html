@@ -1,42 +1,83 @@
 {% extends "runlog/base.html" %}
 
 {% block content %}
-<h2>Operation detail</h2>
+<div class="container mt-4">
+    <h2>Operation Details</h2>
+    <hr>
+    
+    <div class="row">
+        <div class="col-lg-8">
+            <dl class="row g-0">
+                <dt class="col-sm-3">Project Number:</dt>
+                <dd class="col-sm-9">{{ operation.project_number }}</dd>
 
-<p><b>Project Number:</b> {{ operation.project_number }}</p>
-<p><b>AAC Mold Number:</b> {{ operation.aac_mold_number }}</p>
-<p><b>Mold Number:</b> {{ operation.mold_number }}</p>
-<p><b>Surface:</b> {{ operation.surface }}</p>
-<p><b>Moldset Preform:</b> {{ operation.moldset_preform }}</p>
-<p><b>Parent Layout:</b> {{ operation.parent_layout }}</p>
+                <dt class="col-sm-3">AAC Mold Number:</dt>
+                <dd class="col-sm-9">{{ operation.aac_mold_number }}</dd>
 
-<p><b>Task:</b> {{ operation.task }}</p>
-<p><b>Status:</b> {{ operation.status }}</p>
-<p><b>Machine:</b> {{ operation.machine }}</p>
+                <dt class="col-sm-3">Mold Number:</dt>
+                <dd class="col-sm-9">{{ operation.mold_number }}</dd>
 
-<p>
-    <b>Operators:</b>
-    {% for operator in operation.operators.all %}
-        <span>{{ operator }}</span>{% if not forloop.last %}, {% endif %}
-    {% empty %}
-        <span>N/A</span>
-    {% endfor %}
-</p>
+                <dt class="col-sm-3">Surface:</dt>
+                <dd class="col-sm-9">{{ operation.surface }}</dd>
 
-<p><b>Machining type:</b> {{ operation.machining_type }}</p>
-<p><b>Description:</b> {{ operation.description|default:"No description" }}</p>
-<p><b>X levelling:</b> {{ operation.x_levelling|default:"N/A" }}</p>
-<p><b>Y levelling:</b> {{ operation.y_levelling|default:"N/A" }}</p>
+                <dt class="col-sm-3">Moldset Preform:</dt>
+                <dd class="col-sm-9">{{ operation.moldset_preform }}</dd>
 
-<p><b>Start time:</b> {{ operation.start_time }}</p>
-<p><b>End time:</b> {{ operation.end_time }}</p>
-<p><b>Duration:</b> {{ operation.duration|default:"0"|floatformat:"2" }} hours</p>
+                <dt class="col-sm-3">Parent Layout:</dt>
+                <dd class="col-sm-9">{{ operation.parent_layout }}</dd>
 
-<p><b>Note:</b> {{ operation.note|default:"No note" }}</p>
-<p><b>Note2:</b> {{ operation.note2|default:"No note" }}</p>
+                <dt class="col-sm-3">Task:</dt>
+                <dd class="col-sm-9">{{ operation.task }}</dd>
 
-<hr>
-<a href="{% url 'edit_operation' operation.id %}">Edit</a>
-<a href="{% url 'delete_operation' operation.id %}">Delete</a>
+                <dt class="col-sm-3">Status:</dt>
+                <dd class="col-sm-9">{{ operation.status }}</dd>
 
+                <dt class="col-sm-3">Machine:</dt>
+                <dd class="col-sm-9">{{ operation.machine }}</dd>
+
+                <dt class="col-sm-3">Operators:</dt>
+                <dd class="col-sm-9">
+                    {% for operator in operation.operators.all %}
+                        <span>{{ operator }}</span>{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        <span>N/A</span>
+                    {% endfor %}
+                </dd>
+
+                <dt class="col-sm-3">Machining type:</dt>
+                <dd class="col-sm-9">{{ operation.machining_type }}</dd>
+
+                <dt class="col-sm-3">Description:</dt>
+                <dd class="col-sm-9">{{ operation.description|default:"No description" }}</dd>
+
+                <dt class="col-sm-3">X levelling:</dt>
+                <dd class="col-sm-9">{{ operation.x_levelling|default:"N/A" }}</dd>
+
+                <dt class="col-sm-3">Y levelling:</dt>
+                <dd class="col-sm-9">{{ operation.y_levelling|default:"N/A" }}</dd>
+
+                <dt class="col-sm-3">Start time:</dt>
+                <dd class="col-sm-9">{{ operation.start_time }}</dd>
+
+                <dt class="col-sm-3">End time:</dt>
+                <dd class="col-sm-9">{{ operation.end_time }}</dd>
+
+                <dt class="col-sm-3">Duration:</dt>
+                <dd class="col-sm-9">{{ operation.duration|default:"0"|floatformat:"2" }} hours</dd>
+
+                <dt class="col-sm-3">Note:</dt>
+                <dd class="col-sm-9">{{ operation.note|default:"No note" }}</dd>
+
+                <dt class="col-sm-3">Note2:</dt>
+                <dd class="col-sm-9">{{ operation.note2|default:"No note" }}</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'edit_operation' operation.id %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'delete_operation' operation.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'operation_list' %}" class="btn btn-secondary">Back to list</a>
+    </div>
+</div>
 {% endblock %}

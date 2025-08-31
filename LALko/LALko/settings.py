@@ -1,5 +1,9 @@
 #all operations centrování/šířka sloupců
-# #co jsou povinná pole a upravit pořadí, aby to sedělo potom všude        
+#tabulka širší a scrollovatelná do strany vidět pořád ne až dole, jsou tam dvě
+#co jsou povinná pole a upravit pořadí, aby to sedělo potom všude        
+
+        
+        # návrat k poslednímu commitu "git reset --hard HEAD"
 
         #POSTGRES ZAČÁTEK NA NOVÉM PC
         # sudo -u postgres psql
