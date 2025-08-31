@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container mt-4">
     <h2>Smazat operaci</h2>
-    <p class="mb-4">Opravdu si přejete smazat operaci s ID "{{ operation.id }}"?</p>
+    <p class="mb-4">Opravdu si přejete smazat operaci s ID "<span class="badge bg-primary">{{ operation.id }}</span>"?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger me-2">Smazat</button>
