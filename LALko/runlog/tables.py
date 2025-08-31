@@ -73,7 +73,6 @@ class OperationTable(tables.Table):
         attrs={"th": {"style": "width: auto;"}, "td": {"style": "max-width: auto;"}}
     )
     task = tables.Column(
-        accessor="task__name", 
         verbose_name="Task",
         attrs={"th": {"style": "width: auto;"}, "td": {"style": "max-width: auto;"}}
     )
@@ -131,5 +130,6 @@ class OperationTable(tables.Table):
             "status", "task", "start_time", "end_time", "duration",
             "short_description", "x_levelling", "y_levelling", "note", "note2", "actions"
         )
-        attrs = {"class": "table table-striped table-bordered text-center align-middle"}
+        # Zde kombinujeme třídy a styl šířky
+        attrs = {"class": "table table-striped table-bordered text-center align-middle", "style": "width: 100%;"}
         th_attrs = {"class": "text-center align-middle"}

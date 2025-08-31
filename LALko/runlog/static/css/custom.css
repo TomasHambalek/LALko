@@ -1,33 +1,35 @@
 /* runlog/static/css/custom.css */
 
+/* Zajistí, že pozadí stránky má správnou barvu */
 body {
     background-color: lightblue !important;
 }
 
+/* Toto pravidlo zarovná obsah kontejneru doleva */
 .container {
-    max-width: 100% !important;
     margin-right: auto;
-    margin-left: 10px !important;
+    margin-left: 0 !important;
     padding-right: 15px;
     padding-left: 15px;
 }
 
+/* Zajišťuje, že se dlouhé texty ořežou a zobrazí se tři tečky */
 td[style*="max-width"] {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* ---- Opravy pro tabulku ---- */
+/* ---- Konečné opravy pro tabulku ---- */
 
-/* Zajistí, že se nadpisy zarovnají svisle na střed (přepisuje výchozí styl) */
-.table-responsive thead th {
-    vertical-align: middle !important;
+/* Zajišťuje, že se tabulka vždy roztáhne na celou šířku a přebije všechna ostatní pravidla */
+.table {
+    width: 100% !important;
 }
 
-/* Toto pravidlo s !important vynutí šířku sloupce a přebije všechny ostatní styly. */
-.table th {
-    width: auto !important;
+/* Zajišťuje, že se nadpisy zarovnají svisle na střed */
+.table-responsive thead th {
+    vertical-align: middle !important;
 }
 
 /* Zajišťuje, že se hlavička tabulky "přilepí" a bude neustále viditelná */
