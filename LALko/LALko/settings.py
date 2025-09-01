@@ -1,3 +1,4 @@
+#zkouška že updatuje
 """
 Django settings for LALko project.
 
