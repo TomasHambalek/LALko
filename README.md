@@ -53,3 +53,5 @@ POSTUPY
 # v Djangu - python manage.py loaddata fixtures/initial_data.json
 # python manage.py runserver
 # python manage.py createsuperuser (tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django)
+
+Zkouška, že to sleduje v práci změny tady.
