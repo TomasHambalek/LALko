@@ -142,7 +142,7 @@ class OperationAdmin(admin.ModelAdmin):
     get_moldset_preform.short_description = "Moldset Preform"
 
     def get_parent_layout(self, obj):
-        return obj.parent_layout.name if obj.parent_layout else "N/A"
+        return obj.parent_layout.name if obj.parent_layout else "-"
     get_parent_layout.short_description = "Parent Layout"
     
     def get_status(self, obj):

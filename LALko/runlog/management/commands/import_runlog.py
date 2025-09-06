@@ -1,9 +1,11 @@
 # runlog/management/commands/import_runlog.py
 
 from django.core.management.base import BaseCommand
-from runlog.models import Operation, Machine, MachiningType, Operator
+from runlog.models import Operation, Machine, MachiningType, Operator, Task, ProjectNumber, AACMoldNumber, MoldsetPreform, Surface, ParentLayout, Status
+from django.utils import timezone  # Nový import
 import pandas as pd
 from pathlib import Path
+import re
 
 class Command(BaseCommand):
     help = "Importuje data z Excelu do databáze (Runlog)"
@@ -22,61 +24,94 @@ class Command(BaseCommand):
             self.stderr.write(self.style.ERROR(f"Soubor {excel_path} neexistuje"))
             return
 
-        df = pd.read_excel(excel_path, sheet_name="Runlog", engine='openpyxl', skiprows=1)
+        df = pd.read_excel(excel_path, sheet_name="Runlog", engine='openpyxl', skiprows=1, header=None)
+
+        df.columns = [
+            "Task", "Description", "Status", "X Levelling", "Y Levelling",
+            "Project Number", "AAC Mold Number", "Mold Number", "Surface",
+            "Moldset Preform", "Parent Layout", "Start Time", "End Time",
+            "Duration", "Operators", "Note", "Note2"
+        ]
 
         try:
-            machine = Machine.objects.get(name="P400 Máňa")
-            machining_type = MachiningType.objects.get(name="Line By Line")
-        except Machine.DoesNotExist:
-            self.stderr.write(self.style.ERROR("Chyba: Stroj 'P400 Máňa' nenalezen v DB."))
-            return
-        except MachiningType.DoesNotExist:
-            self.stderr.write(self.style.ERROR("Chyba: Typ obrábění 'Line By Line' nenalezen v DB."))
+            machine, _ = Machine.objects.get_or_create(name="P400 Máňa")
+            machining_type, _ = MachiningType.objects.get_or_create(name="Line By Line")
+            status_obj, _ = Status.objects.get_or_create(name="Completed")
+        except Exception as e:
+            self.stderr.write(self.style.ERROR(f"Chyba při inicializaci: {e}"))
             return
 
         count = 0
 
         for index, row in df.iterrows():
             try:
+                task_value = row['Task']
+                if not pd.notna(task_value):
+                    self.stderr.write(
+                        self.style.WARNING(f"Varování: Přeskočen řádek {index + 2} - chybí povinné pole 'Task'.")
+                    )
+                    continue
+
+                # Ošetření cizích klíčů (ForeignKey)
+                task_obj, _ = Task.objects.get_or_create(name=task_value)
+                
+                project_number_obj = None
+                if pd.notna(row['Project Number']):
+                    project_number_obj, _ = ProjectNumber.objects.get_or_create(name=row['Project Number'])
+
+                aac_mold_number_obj = None
+                if pd.notna(row['AAC Mold Number']):
+                    aac_mold_number_obj, _ = AACMoldNumber.objects.get_or_create(name=row['AAC Mold Number'])
+
+                surface_obj = None
+                if pd.notna(row['Surface']):
+                    surface_obj, _ = Surface.objects.get_or_create(name=row['Surface'])
+
+                moldset_preform_obj = None
+                if pd.notna(row['Moldset Preform']):
+                    moldset_preform_obj, _ = MoldsetPreform.objects.get_or_create(name=row['Moldset Preform'])
+                
+                parent_layout_obj = None
+                if pd.notna(row['Parent Layout']):
+                    parent_layout_obj, _ = ParentLayout.objects.get_or_create(name=row['Parent Layout'])
+                
+                # Nová úprava pro ošetření časových zón
+                start_time = timezone.make_aware(row['Start Time']) if pd.notna(row['Start Time']) else None
+                end_time = timezone.make_aware(row['End Time']) if pd.notna(row['End Time']) else None
+
+                # Vytvoření záznamu s ošetřením prázdných hodnot (NaN)
                 op = Operation.objects.create(
-                    task=row.get('Task'),
-                    description=row.get('Description', ''),
-                    status=row.get('Status'),
-                    x_levelling=row.get('X Levelling'),
-                    y_levelling=row.get('Y Levelling'),
-                    project_number=row.get('Project Number'),
-                    aac_mold_number=row.get('AAC Mold Number'),
-                    mold_number=row.get('Mold Number'),
-                    surface=row.get('Surface'),
-                    moldset_preform=row.get('Moldset Preform'),
-                    parent_layout=row.get('Parent Layout'),
-                    start_time=row.get('Start Time'),
-                    end_time=row.get('End Time'),
-                    duration=row.get('Duration'),
-                    note=row.get('Note', ''),
-                    note2=row.get('Note2', ''),
+                    task=task_obj,
+                    description=str(row['Description']) if pd.notna(row['Description']) else '',
+                    status=status_obj,
+                    x_levelling=row['X Levelling'] if pd.notna(row['X Levelling']) else None,
+                    y_levelling=row['Y Levelling'] if pd.notna(row['Y Levelling']) else None,
+                    project_number=project_number_obj,
+                    aac_mold_number=aac_mold_number_obj,
+                    mold_number=str(row['Mold Number']) if pd.notna(row['Mold Number']) else '',
+                    surface=surface_obj,
+                    moldset_preform=moldset_preform_obj,
+                    parent_layout=parent_layout_obj,
+                    start_time=start_time,
+                    end_time=end_time,
+                    duration=row['Duration'] if pd.notna(row['Duration']) else None,
+                    note=str(row['Note']) if pd.notna(row['Note']) else '',
+                    note2=str(row['Note2']) if pd.notna(row['Note2']) else '',
                     machine=machine,
                     machining_type=machining_type,
                 )
 
-                # Operátoři - rozdělit podle "+" a přiřadit podle `name`
-                operators_raw = row.get('Operators')
+                operators_raw = row['Operators']
                 if pd.notna(operators_raw):
                     operator_names = [name.strip() for name in str(operators_raw).split('+')]
-                    operator_objs = Operator.objects.filter(name__in=operator_names)
-
-                    # Výstraha, pokud některé operátory nenajdeme
-                    missing = set(operator_names) - set(operator_objs.values_list('name', flat=True))
-                    if missing:
-                        self.stderr.write(
-                            self.style.WARNING(f"Operátoři nenalezeni: {missing} (řádek {index + 2})")
-                        )
-
-                    op.operators.set(operator_objs)
+                    for name in operator_names:
+                        operator_obj, _ = Operator.objects.get_or_create(name=name)
+                    op.operators.set(Operator.objects.filter(name__in=operator_names))
 
                 count += 1
 
             except Exception as e:
                 self.stderr.write(self.style.ERROR(f"Chyba při zpracování řádku {index + 2}: {e}"))
+                self.stderr.write(self.style.ERROR(f"Data řádku: {row.to_dict()}"))
 
         self.stdout.write(self.style.SUCCESS(f"Import úspěšně dokončen. Načteno {count} záznamů."))
