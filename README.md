@@ -14,7 +14,11 @@ TO DO Course requirements
 -Dokumentace: Každá třída a funkce by měla mít alespoň jednořádkovou dokumentaci ("""...""" nebo #). Je třeba projít celý kód a přidat chybějící popisy.
 -Testy (pytest): Toto je klíčový a nedokončený požadavek. Musíte vytvořit minimálně 3 testy pomocí frameworku pytest, které pokryjí klíčové funkcionality. Pro každý pohled by měly být alespoň dva testy.
 
-TIP: Import z excelu
+IMPORT Z EXCELU
+-Začistit data, aby to nedělalo nepořádek v roletkách
+-Upravit co bylo dělané Káťou, co Spiralem/LongPlates(mana s2 neco bylo taky longplaty)
+-Udělat zálohu dat
+# Pro spuštění: python manage.py import_runlog /home/tomas/Programming/CodersLab/LALko/LALko/fixtures/excel_import/runlog2.xlsm
 
 POSTUPY        
 # návrat k poslednímu commitu "git reset --hard HEAD"
@@ -30,7 +34,7 @@ POSTUPY
 #RESET DATABÁZE
 # DROP DATABASE lalko_db;
 # CREATE DATABASE lalko_db;
-# python manage.py makemigrations; python manage.pymigrate;
+# python manage.py makemigrations; python manage.py migrate;
 # python manage.py createsuperuser (tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django)
 # python manage.py load_input_data
 # python manage.py runserver
@@ -53,5 +57,3 @@ POSTUPY
 # v Djangu - python manage.py loaddata fixtures/initial_data.json
 # python manage.py runserver
 # python manage.py createsuperuser (tomashambalek@eu.aacoptics.com a uživatel a heslo "admin" pro superuser Django)
-
-Zkouška, že to sleduje v práci změny tady.
